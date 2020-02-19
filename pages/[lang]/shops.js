@@ -4,6 +4,7 @@ import Layout from "../../components/Layout";
 import useTranslation from "../../translations/useTranslation";
 import GoogleMaps from "../../components/re-google-map";
 
+//ккк
 const Shops = () => {
   const { t } = useTranslation();
   return (
