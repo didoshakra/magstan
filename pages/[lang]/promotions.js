@@ -1,6 +1,6 @@
 //portfolio.js
-import Layout from "../../components/layout";
-import Gallery from "../../components/gallery";
+import Layout from "../../components/Layout";
+import Gallery from "../../components/Gallery";
 import useTranslation from "../../translations/useTranslation";
 
 const Promotions = () => {
