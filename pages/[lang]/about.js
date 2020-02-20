@@ -1,8 +1,6 @@
 //Shops.js
-import Link from "next/link";
 import Layout from "../../components/Layout";
 import useTranslation from "../../translations/useTranslation";
-import GoogleMaps from "../../components/re-google-map";
 
 const Shops = () => {
   const { t } = useTranslation();
