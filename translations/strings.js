@@ -31,7 +31,7 @@ const strings = {
     pageAboutMe_text1: `"Stanislavsky" is a chain of small grocery stores,
         Family-type pavilions and booths in Kalush. Our first store
         Opened in Kalush in 2002, which started the network
-        "Stanislavsky", which now has 8 outlets. We have since
+        "Stanislavsky", which now has 7 outlets. We have since
         We care about the quality of the "Stanislavsky" brand by providing our customers
         High quality of service and giving them a sense of family peace
         And complete satisfaction. We always take care of being our buyer
@@ -85,7 +85,7 @@ const strings = {
     pageAboutMe_text1: `"Stanisławski" to sieć małych sklepów spożywczych,
         Rodzinne pawilony i kabiny w Kałuszu. Nasz pierwszy sklep
         Otwarto w Kalush w 2002 r., co uruchomiło sieć
-        "Stanisławski", który ma teraz 8 sklepów. Mamy odtąd
+        "Stanisławski", który ma teraz 7 sklepów. Mamy odtąd
         Dbamy o jakość marki "Stanisławski", zapewniając naszym klientom
         Wysoka jakość usług i poczucie spokoju rodzinnego
         I pełna satysfakcja. Zawsze dbamy o to, aby być naszym kupującym
@@ -138,7 +138,7 @@ const strings = {
     pageAboutMe_text1: `"Станіславський" - мережа невеличких продуктових магазинів,
     павільйонів і кіосків сімейного типу у м.Калуші. Перший наш магазин
     відкрився у м. Калуш у 2002 році який започаткував мережу
-    "Станіславський", що тепер налічує 8 торгових точок. З тих пір ми
+    "Станіславський", що тепер налічує 7 торгових точок. З тих пір ми
     дбаємо про якість бренду "Станіславський", надаючи нашим покупцям
     високу якість обслуговування та даруючи їм відчуття сімейного затишку та
     повного задоволення. Ми завжди дбаємо про те, щоб наш покупець
