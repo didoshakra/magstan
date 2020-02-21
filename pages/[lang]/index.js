@@ -20,7 +20,7 @@ const Homepage = () => {
   const theme = state.theme;
   return (
     // <Layout title="Home">
-    <Layout title={t("pageHome_title")}>
+    <Layout title={t("pageHome_title")} description={t("pageHome_description")}>
       <div className="cover">
         <div className="hello">
           {/* <img src="/StanLogo/-400.jpg" className="logo" /> */}

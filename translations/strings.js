@@ -2,7 +2,8 @@
 
 const strings = {
   en: {
-    loyOut_title: "Kalush MS, products, drinks, cigarettes, alcohol ...",
+    // loyOut_title: "Kalush MS, products, drinks, cigarettes, alcohol ...",
+    loyOut_title: "MS Kalush",
     theme_Light: "Light",
     theme_Dark: "Dark",
     theme_Other: "Other",
@@ -17,7 +18,9 @@ const strings = {
     header_titleSite: "Test Site",
     header_toggleTheme: "Change Theme (Light / Dark)",
     header_changeLanguage: "Change Language",
-    pageHome_title: "Home",
+    pageHome_title:
+      "Promotions for products, beverages, cigarettes, alcohol ...",
+    pageHome_description: "Buy quality food",
     pageHome_Welcome: "Welcome",
     // pageHome_aboutPage: `This is the homepage of the test site, which is at the beginning Development.`,
     // pageHome_aboutPage: `Shop Stanislavsky.`,
@@ -40,7 +43,6 @@ const strings = {
         Left our stores only in good spirits and positive
         Emotions. And of course, with full bags of quality products`,
     pageAboutMe_text2: `We sincerely welcome you to visit our outlets. You will not regret!!!`,
-    pageShops_title: "Магазини",
     pageShops_title: "Shops",
     pageShops_m1Title: "Shop 'Станіславський'",
     pageShops_m1Descr: "Address: Tikhogo str., 2",
@@ -59,7 +61,7 @@ const strings = {
     pageShops_onMap: "Show on Map"
   },
   pl: {
-    loyOut_title: "Kalush MS, produkty, napoje, papierosy, alkohol ...",
+    loyOut_title: "MS Kalush",
     theme_Light: "Światło",
     theme_Dark: "Сiemno",
     theme_Other: "Inny",
@@ -75,7 +77,9 @@ const strings = {
     header_titleSite: "Test Site",
     header_toggleTheme: "Змінити тему (світлу / темну)",
     header_changeLanguage: "Змінити мову",
-    pageHome_title: "Główna",
+    // pageHome_title: "Główna",
+    pageHome_title: " Promocje produktów, napojów, papierosów, alkoholu ...",
+    pageHome_description: "Kupuj wysokiej jakości jedzenie",
     pageHome_Welcome: "Witamy",
     // pageHome_aboutPage: `Sieć sklepów Stanisławski.`,
     pageHome_aboutPage: `Sieć  Stanisławski.`,
@@ -114,7 +118,8 @@ const strings = {
     pageShops_onMap: "Pokaż na mapie"
   },
   uk: {
-    loyOut_title: "Калуш МС, продукти, напої, сигарети, алкоголь...", //=48 (40–65сим/з пробілами (мах–80))
+    // loyOut_title: "Калуш МС, продукти, напої, сигарети, алкоголь...", //=48 (40–65сим/з пробілами (мах–80))
+    loyOut_title: "МС Калуш", //=48 (40–65сим/з пробілами (мах–80))
     theme_Light: "Світла",
     theme_Dark: "Темна",
     theme_Other: "Інша",
@@ -130,7 +135,9 @@ const strings = {
     header_toggleTheme: "Змінити тему (світлу / темну)",
     header_openDrawer: "Відкрити головну навігацію",
     header_changeLanguage: "Змінити мову",
-    pageHome_title: "Головна",
+    // pageHome_title: "Головна",
+    pageHome_title: "Акції на продукти, напої, сигарети, алкоголь...",
+    pageHome_description: "Купуйте якісні продукти харчування",
     pageHome_Welcome: "Вітаємо",
     // pageHome_aboutPage: `Мережа магазинів Станіславський.`,
     pageHome_aboutPage: `Мережа Станіславський.`,

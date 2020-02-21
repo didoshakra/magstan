@@ -17,8 +17,9 @@ const Layout = ({ children, title, description }) => {
     <div>
       <Head>
         <title>
-          {title ? `${title} | ` : ""}
-          {t("loyOut_title")}
+          {t("loyOut_title")}|{title ? `${title}  ` : ""}
+          {/* {t("loyOut_title")}:{title ? `${title} | ` : ""} */}
+          {/* {t("loyOut_title")} */}
         </title>
         {description ? <meta name="description" content={description} /> : null}
         <meta charSet="utf-8" />
