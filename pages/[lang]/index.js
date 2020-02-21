@@ -52,6 +52,7 @@ const Homepage = () => {
           background: transparent url(/photo/bananu-alkogol-obr.jpg) no-repeat
             center center;
           background-size: cover;
+          word-wrap: break-word; /* Перенос слів */
         }
         .hello {
           position: absolute;
@@ -68,7 +69,6 @@ const Homepage = () => {
         .hello h1 {
           // margin: 0 0 10px 0;
           line-height: 0.01;
-          word-wrap: break-word; /* Перенос слів */
         }
         .hello h3 {
           line-height: inherit;
