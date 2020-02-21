@@ -1,5 +1,6 @@
 //_document.js
-import Document, { Head, Main, NextScript } from "next/document";
+// import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 //Для створенння метатег всередині голови є компонент Head та спеціальний файл _document.js,
 //в якому ми можемо налаштувати загальний html кожнлї сторінки(який надається один раз лише на стороні сервера).
@@ -13,7 +14,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html lang="en">
         <Head>
           <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
           {/* //https://www.youtube.com/watch?v=GfsqFaiaK3A */}
@@ -27,7 +28,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

@@ -13,7 +13,7 @@ const Shops = () => {
         <div className="shops-list">
           <div className="item">
             <h3 id="m1">{t("pageAboutMe_firstShop")}</h3>
-            <img src="/shops/Ctan2-500-375.jpg" />
+            <img src="/shops/Ctan2-500-375.jpg" alt="Ctan2" />
             <p>{t("pageShops_m1Descr")}</p>
           </div>
           <div className="item">

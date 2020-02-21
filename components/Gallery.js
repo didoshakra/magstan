@@ -4,7 +4,7 @@ const Gallery = ({ images }) => (
     {images.map(image => {
       return (
         <div className="image" key={image}>
-          <img src={image} />
+          <img src={image} alt="img" />
         </div>
       );
     })}

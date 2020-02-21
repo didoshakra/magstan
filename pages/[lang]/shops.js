@@ -17,49 +17,49 @@ const Shops = () => {
           <Link href="#map">
             <div className="item" title={t("pageShops_onMap")}>
               <h3 id="m1">{t("pageShops_m1Title")}</h3>
-              <img src="/shops/Ctan2-500-375.jpg" />
+              <img src="/shops/Ctan2-500-375.jpg" alt="Ctan2 " />
               <p>{t("pageShops_m1Descr")}</p>
             </div>
           </Link>
           <Link href="#map">
             <div className="item" title={t("pageShops_onMap")}>
               <h3 id="m2">{t("pageShops_m2Title")}</h3>
-              <img src="/shops/m66-500-375.jpg" />
+              <img src="/shops/m66-500-375.jpg" alt="m66" />
               <p>{t("pageShops_m2Descr")}</p>
             </div>
           </Link>
           <Link href="#map">
             <div className="item" title={t("pageShops_onMap")}>
               <h3 id="m3">{t("pageShops_m3Title")}</h3>
-              <img src="/shops/Pushk-500-375.jpg" />
+              <img src="/shops/Pushk-500-375.jpg" alt="Pushk" />
               <p>{t("pageShops_m3Descr")}</p>
             </div>
           </Link>
           <Link href="#map">
             <div className="item" title={t("pageShops_onMap")}>
               <h3 id="m4">{t("pageShops_m4Title")}</h3>
-              <img src="/shops/Dvoruk-500-375.jpg" />
+              <img src="/shops/Dvoruk-500-375.jpg" alt="Dvoruk" />
               <p>{t("pageShops_m4Descr")}</p>
             </div>
           </Link>
           <Link href="#map">
             <div className="item" title={t("pageShops_onMap")}>
               <h3 id="m5">{t("pageShops_m5Title")}</h3>
-              <img src="/shops/Tytyn-500-375.jpg" />
+              <img src="/shops/Tytyn-500-375.jpg" alt="Tytyn" />
               <p>{t("pageShops_m5Descr")}</p>
             </div>
           </Link>
           <Link href="#map">
             <div className="item" title={t("pageShops_onMap")}>
               <h3 id="m6">{t("pageShops_m6Title")}</h3>
-              <img src="/shops/m55-500-375.jpg" />
+              <img src="/shops/m55-500-375.jpg" alt="m55" />
               <p>{t("pageShops_m6Descr")}</p>
             </div>
           </Link>
           <Link href="#map">
             <div className="item" title={t("pageShops_onMap")}>
               <h3 id="m7">{t("pageShops_m7Title")}</h3>
-              <img src="/shops/mStan-500-355.jpg" />
+              <img src="/shops/mStan-500-355.jpg" alt="mStan" />
               <p>{t("pageShops_m7Descr")}</p>
             </div>
           </Link>
