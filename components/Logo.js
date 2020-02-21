@@ -33,7 +33,7 @@ const Logo = () => {
           top: 20px; //відступ
         }
         .logo a {
-          background: ${theme.colors.background};
+          background: ${theme.colors.background1};
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.sansSerif};
         }
