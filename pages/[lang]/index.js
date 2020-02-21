@@ -24,7 +24,7 @@ const Homepage = () => {
         <div className="hello">
           {/* <img src="/StanLogo/-400.jpg" className="logo" /> */}
           <img src="/Ctan-400-231.jpg" className="logo" />
-          <h1>{t("pagepageHome_Welcome")}👋</h1>
+          <h1>{t("pageHome_Welcome")}👋</h1>
           <h3>{t("pageHome_aboutPage")}</h3>
           <Link href="/[lang]/about" as={`/${locale}/about`}>
             <a className="view-more">{t("pageHome_buttonAboutMe")}</a>
