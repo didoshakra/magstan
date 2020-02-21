@@ -64,11 +64,11 @@ const Homepage = () => {
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.sansSerif};
           // background: #3f3f3f;
+          word-wrap: break-word; /* Перенос слов */
         }
         .hello h1 {
           // margin: 0 0 10px 0;
           line-height: 0.01;
-          word-wrap: break-word; /* Перенос слов */
         }
         .hello h3 {
           line-height: inherit;
