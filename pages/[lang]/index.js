@@ -52,7 +52,6 @@ const Homepage = () => {
           background: transparent url(/photo/bananu-alkogol-obr.jpg) no-repeat
             center center;
           background-size: cover;
-          word-wrap: break-word; /* Перенос слів */
         }
         .hello {
           position: absolute;
@@ -98,9 +97,11 @@ const Homepage = () => {
             font-size: 18px;
             // padding: 20px;
             padding: 10px;
+            word-wrap: break-word; /* Перенос слів */
           }
           h1 {
             font-size: 28px;
+            word-wrap: break-word; /* Перенос слів */
           }
         }
       `}</style>
