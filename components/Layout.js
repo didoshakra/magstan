@@ -5,8 +5,10 @@ import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
 import { ComponentContext } from "../context/ComponentContext";
+import useTranslation from "../translations/useTranslation";
 
 const Layout = ({ children, title, description }) => {
+  const { t } = useTranslation();
   const { state } = useContext(ComponentContext);
   const theme = state.theme;
   // console.log("*** /Layout.js/theme=", theme);
@@ -16,7 +18,7 @@ const Layout = ({ children, title, description }) => {
       <Head>
         <title>
           {title ? `${title} | ` : ""}
-          RA-site
+          {t("loyOut_title")}
         </title>
         {description ? <meta name="description" content={description} /> : null}
         <meta charSet="utf-8" />
