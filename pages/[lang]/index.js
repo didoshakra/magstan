@@ -24,7 +24,7 @@ const Homepage = () => {
       <div className="cover">
         <div className="hello">
           {/* <img src="/StanLogo/-400.jpg" className="logo" /> */}
-          <img src="/Ctan-400-231.jpg" className="logo" />
+          <img src="/Ctan-400-231.jpg" className="logo" alt="StanLogo" />
           <h1>{t("pageHome_Welcome")}👋</h1>
           <h3>{t("pageHome_aboutPage")}</h3>
           <Link href="/[lang]/about" as={`/${locale}/about`}>
