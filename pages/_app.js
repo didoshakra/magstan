@@ -2,7 +2,6 @@
 import React from "react";
 import App, { Container } from "next/app";
 // import Layout from "../components/Layout";
-// import { LocaleProvider } from "../context/LocaleContext";
 import { ThemeProvider } from "../context/ComponentContext";
 
 class MyApp extends App {

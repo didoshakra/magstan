@@ -17,9 +17,11 @@ const Logo = () => {
           <img src="/StanLogo-80.jpg" alt="StanLogo" />
         </a>
       </Link>
+    <p className="textHeadIcons">
       <Link href="/[lang]" as={`/${locale}`}>
-        <a title={t("logo_logoTitle")}>Станіславський</a>
+        <a title={t("logo_logoTitle")} >Станіславський</a>
       </Link>
+    </p>
       <style jsx>{`
         .logo {
           margin: 5px 0 0;
@@ -29,7 +31,7 @@ const Logo = () => {
         }
         .logo img {
           display: block; //Блок стремится расшириться на всю доступную ширину. Можно указать ширину и высоту явно
-          width: 80px;
+          // width: 80px;
           top: 20px; //відступ
         }
         .logo a {
@@ -37,12 +39,17 @@ const Logo = () => {
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.sansSerif};
         }
+        
         @media (max-width: 600px) {
           .logo {
             display: block;
             margin-top: 20px;
+            display: "none";
           }
-          .link {
+         .logo p {
+            display: "none";
+          }
+             .link {
             display: inline-block;
           }
         }

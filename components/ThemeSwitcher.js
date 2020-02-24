@@ -36,31 +36,37 @@ const ThemeSwitcher = () => {
         </option>
       ))}
 
-      <style jsx>{`
-        .select {
-          display: flex;
-          margin: 0 10px; //між блоками
-          //justify-content: space-center; //Вирівнювання вправо
-          // justify-content: space-between; //Вирівнювання вправо
-          align-items: center;
-          font-size: 20px;
-          cursor: pointer; //Рука
-        }
-
-        @media (max-width: 600px) {
-          .select {
-            margin: 0 5px; //між блоками
-            font-size: 16px;
-          }
-        }
-      `}</style>
       <style jsx>
+        {`
+          .select {
+            display: flex;
+            margin: 0 10px; //між блоками
+            //justify-content: space-center; //Вирівнювання вправо
+            // justify-content: space-between; //Вирівнювання вправо
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer; //Рука
+            color: ${theme.colors.text};
+            font-family: ${theme.fontFamily.sansSerif};
+            background: ${theme.colors.background1};
+          }
+
+          @media (max-width: 600px) {
+            .select {
+              margin: 0 5px; //між блоками
+              font-size: 16px;
+            }
+          }
+        `}
+      </style>
+      {/* <style jsx>
         {`
       .select {
         color: ${theme.colors.text};
         font-family: ${theme.fontFamily.sansSerif};
-        background: ${theme.colors.background1};`}
-      </style>
+        background: ${theme.colors.background1};
+        `}
+      </style> */}
     </select>
   );
 };

@@ -18,6 +18,7 @@ const Header = () => {
         display: flex;
         justify-content: space-between; //Вирівнювання вправо
         align-items: center;
+        background: ${theme.colors.background1};
       }
       @media (max-width: 600px) {
           display: block;
@@ -25,9 +26,10 @@ const Header = () => {
         }
       }
     `}</style>
-      <style jsx>{`
+      {/* <style jsx>{`
       .header-wrapper {
-        background: ${theme.colors.background1};`}</style>
+        background: ${theme.colors.background1};`}
+      </style> */}
     </div>
   );
 };

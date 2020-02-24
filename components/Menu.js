@@ -39,63 +39,60 @@ const Menu = () => {
             <a>{t("header_titleAboutME")}</a>
           </Link>
         </li>
-        {/* <li>
-          <Link
-            href="/[lang]/react-google-map"
-            as={`/${locale}/react-google-map`}
-          >
-            <a>r-g-map</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/[lang]/google-map" as={`/${locale}/google-map`}>
-            <a>g-map</a>
-          </Link>
-        </li> */}
+      </ul>
+      <style jsx>{`
+        switche {
+          margin: 5px 0 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+        }
+        .menu {
+          margin: 5px 0 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+        }
+        .menu li a {
+          cursor: pointer;
+          // color: #111;
+          font-size: 20px;
+          // font-weight: 300;//товщина(жирність) шрифта.//За замовчуванням (Normal або 400(300-це тонший))
+          padding: 5px 2px;
+          margin: 0 10px;
+          text-decoration: none;
+        }
+        .menu li a:hover {
+          padding-bottom: 3px;
+          border-bottom: 2px solid #ffe525;
+        }
+        //   @media (max-width: 900px) {
 
-        <style jsx>{`
+        // }
+        @media (max-width: 600px) {
+          //Для малих екранів
           .menu {
-            margin: 5px 0 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
+            display: block;
+            margin-top: 10px;
+          }
+          .menu li {
+            display: inline-block;
           }
           .menu li a {
-            cursor: pointer;
-            // color: #111;
-            font-size: 20px;
-            // font-weight: 300;//товщина(жирність) шрифта.//За замовчуванням (Normal або 400(300-це тонший))
-            padding: 5px 2px;
-            margin: 0 10px;
-            text-decoration: none;
+            font-size: 16px;
+            color: ${theme.colors.text};
+            // background: ${theme.colors.background1};
+            font-family: ${theme.fontFamily.sansSerif};
           }
-          .menu li a:hover {
-            padding-bottom: 3px;
-            border-bottom: 2px solid #ffe525;
-          }
-          @media (max-width: 600px) {
-            //Для малих екранів
-            .menu {
-              display: block;
-              margin-top: 10px;
-            }
-            .menu li {
-              display: inline-block;
-            }
-            .menu li a {
-              font-size: 16px;
-            }
-          }
-        `}</style>
-
-        <style jsx>{`
+        }
+      `}</style>
+      {/* <style jsx>{`
         //Динамічні стилі (Окремо, щоб при зміні були перераховані лише динамічні)
         .menu li a {
           color: ${theme.colors.text};
           // background: ${theme.colors.background1};
           font-family: ${theme.fontFamily.sansSerif};
-      `}</style>
-      </ul>
+      `}</style> */}
     </div>
   );
 };

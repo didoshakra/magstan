@@ -11,6 +11,8 @@ const Index = () => {
     window.location.replace(`/${glocale}`);
     // window.location.replace(`/${getInitialLocale()}`);
   });
+
+
   return (
     <Head>
       <meta name="robots" content="noindex, nofollow" />
