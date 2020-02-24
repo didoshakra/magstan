@@ -1,4 +1,0 @@
-user-agent: *
-disallow:
-#host: https://magstan.herokuapp.com
-#sitemap: https://magstan.herokuapp.com/sitemap
