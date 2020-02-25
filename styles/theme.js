@@ -33,8 +33,9 @@ export const themeDark = {
 
 export const themeLith = {
   fontFamily: {
-    sansSerif:
-      '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI","Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
+    sansSerif: '-apple-system, "Helvetica Neue", Arial, sans-serif',
+    // sansSerif:
+    //   '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI","Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
     mono: "Menlo, Monaco, monospace"
     //   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
     //     "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
@@ -56,8 +57,9 @@ export const themeLith = {
 };
 export const themeOther = {
   fontFamily: {
-    sansSerif:
-      '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI","Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
+    sansSerif: '-apple-system, "Helvetica Neue", Arial, sans-serif',
+    // sansSerif:
+    //   '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI","Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
     mono: "Menlo, Monaco, monospace"
     //   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
     //     "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
