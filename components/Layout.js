@@ -42,9 +42,6 @@ const Layout = ({ children, title, description }) => {
           line-height: 1.7;
           font-weight: 400;
           text-rendering: optimizeLegibility;
-          background: ${theme.colors.background};
-          color: ${theme.colors.text};
-          font-family: ${theme.fontFamily.sansSerif};
         }
         a {
           color: #1b789e;
@@ -84,13 +81,13 @@ const Layout = ({ children, title, description }) => {
           text-align: center;
         }
       `}</style>
-      {/* <style jsx global>{`
+      <style jsx global>{`
         body {
           background: ${theme.colors.background};
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.sansSerif};
         }
-      `}</style> */}
+      `}</style>
     </div>
   );
 };

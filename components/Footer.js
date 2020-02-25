@@ -14,20 +14,17 @@ const Footer = () => {
           text-align: center;
           margin-top: 80px;
           padding: 80px 30px;
-          background: ${theme.colors.background1};
-          color: ${theme.colors.text};
-          font-family: ${theme.fontFamily.sansSerif};
         }
         .copyright {
           margin-bottom: 20px;
       `}</style>
-      {/* <style jsx>{`
+      <style jsx>{`
       //Динамічні стилі (Окремо, щоб при зміні були перераховані лише динамічні)
       .footer-wrapper {
           background: ${theme.colors.background1};
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.sansSerif};
-      `}</style> */}
+      `}</style>
     </div>
   );
 };

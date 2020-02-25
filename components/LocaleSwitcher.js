@@ -46,9 +46,6 @@ const LocaleSwitcher = () => {
           font-size: 20px;
           cursor: pointer; //Рука
           // transform: translate(-50%, -50%);
-          color: ${theme.colors.text};
-          font-family: ${theme.fontFamily.sansSerif};
-          background: ${theme.colors.background1};
         }
 
         @media (max-width: 600px) {
@@ -58,13 +55,13 @@ const LocaleSwitcher = () => {
           }
         }
       `}</style>
-      {/* <style jsx>
+      <style jsx>
         {`
       .select {
         color: ${theme.colors.text};
         font-family: ${theme.fontFamily.sansSerif};
         background: ${theme.colors.background1};`}
-      </style> */}
+      </style>
     </select>
   );
 };

@@ -41,12 +41,12 @@ const Menu = () => {
         </li>
       </ul>
       <style jsx>{`
-        switche {
-          margin: 5px 0 0;
-          padding: 0;
-          list-style: none;
-          display: flex;
-        }
+        // switche {
+        //   margin: 5px 0 0;
+        //   padding: 0;
+        //   list-style: none;
+        //   display: flex;
+        // }
         .menu {
           margin: 5px 0 0;
           padding: 0;
@@ -80,19 +80,16 @@ const Menu = () => {
           }
           .menu li a {
             font-size: 16px;
-            color: ${theme.colors.text};
-            // background: ${theme.colors.background1};
-            font-family: ${theme.fontFamily.sansSerif};
           }
         }
       `}</style>
-      {/* <style jsx>{`
+      <style jsx>{`
         //Динамічні стилі (Окремо, щоб при зміні були перераховані лише динамічні)
         .menu li a {
           color: ${theme.colors.text};
-          // background: ${theme.colors.background1};
+          background: ${theme.colors.background1};
           font-family: ${theme.fontFamily.sansSerif};
-      `}</style> */}
+      `}</style>
     </div>
   );
 };
