@@ -1,5 +1,14 @@
 import { useContext } from "react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCog,
+  faTimes,
+  faBars,
+  faSun,
+  faGlobe
+} from "@fortawesome/free-solid-svg-icons";
+
 import LocaleSwitcher from "./LocaleSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 import useTranslation from "../translations/useTranslation";
@@ -64,22 +73,24 @@ const HeaderMenu = () => {
           {themeMenuOpen ? (
             <ThemeSwitcher themeMenuToggle={themeMenuToggle} />
           ) : (
-            <img
-              onClick={themeMenuToggle}
-              src="/icons/pnp/iosgluph-sun-30.png"
-              alt="sun"
-            />
+            // <img
+            //   onClick={themeMenuToggle}
+            //   src="/icons/pnp/iosgluph-sun-30.png"
+            //   alt="sun"
+            //   />
+            <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
           )}
         </li>
         <li className="nav__item" title={t("headerMenu_titleLanguage")}>
           {langMenuOpen ? (
             <LocaleSwitcher langMenuToggle={langMenuToggle} />
           ) : (
-            <img
-              onClick={langMenuToggle}
-              src="/icons/pnp/iosgluph-globus-30.png"
-              alt="globus"
-            />
+            // <img
+            //   onClick={langMenuToggle}
+            //   src="/icons/pnp/iosgluph-globus-30.png"
+            //   alt="globus"
+            // />
+            <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
           )}
         </li>
       </ul>
@@ -89,29 +100,29 @@ const HeaderMenu = () => {
           {themeMenuOpen ? (
             <ThemeSwitcher themeMenuToggle={themeMenuToggle} />
           ) : (
-            <img
-              onClick={themeMenuToggle}
-              src="/icons/pnp/iosgluph-sun-30.png"
-              alt="sun"
-            />
+            //
+            <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
           )}
         </i>
         <i className="icon">
           {langMenuOpen ? (
             <LocaleSwitcher langMenuToggle={langMenuToggle} />
           ) : (
-            <img
-              onClick={langMenuToggle}
-              src="/icons/pnp/iosgluph-globus-30.png"
-              alt="globus"
-            />
+            // <img
+            //   onClick={langMenuToggle}
+            //   src="/icons/pnp/iosgluph-globus-30.png"
+            //   alt="globus"
+            // />
+            <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
           )}
         </i>
         <i className="icon" onClick={mobileMenuToggle}>
           {mobileMenuOpen ? (
-            <img src="/icons/pnp/iosgluph-delete-30.png" alt="delete" />
+            // <img src="/icons/pnp/iosgluph-delete-30.png" alt="delete" />
+            <FontAwesomeIcon icon={faTimes} />
           ) : (
-            <img src="/icons/pnp/iosgluph-menu-30.png" alt="menu" />
+            // <img src="/icons/pnp/iosgluph-menu-30.png" alt="menu" />
+            <FontAwesomeIcon icon={faBars} />
           )}
         </i>
       </div>
