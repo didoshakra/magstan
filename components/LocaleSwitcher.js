@@ -6,7 +6,7 @@ import { locales, languageNames } from "../translations/config";
 import { ComponentContext } from "../context/ComponentContext";
 import useTranslation from "../translations/useTranslation";
 
-const LocaleSwitcher = () => {
+const LocaleSwitcher = props => {
   const { t } = useTranslation();
   const router = useRouter();
   const { state } = useContext(ComponentContext);
@@ -15,6 +15,7 @@ const LocaleSwitcher = () => {
 
   const handleLocaleChange = React.useCallback(
     e => {
+      props.langMenuToggle(); //Закриває меню
       const regex = new RegExp(`^/(${locales.join("|")})`);
       router.push(
         router.pathname,
