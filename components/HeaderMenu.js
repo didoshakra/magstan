@@ -1,17 +1,10 @@
 import { useContext } from "react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTimes,
-  faBars,
-  faSun,
-  faGlobe
-} from "@fortawesome/free-solid-svg-icons";
 import LocaleSwitcher from "./LocaleSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 import useTranslation from "../translations/useTranslation";
 import { ComponentContext } from "../context/ComponentContext";
-import MobileNav from "./navigation/MobileNav";
+import MobileNav from "./Navigation/MobileNav";
 
 const HeaderMenu = () => {
   const { locale, t } = useTranslation();
@@ -42,6 +35,10 @@ const HeaderMenu = () => {
     <React.Fragment>
       {/* для десктопа */}
       <ul className="nav">
+        {/* <li className="nav__item">
+          <SwitcherExample />
+        </li> */}
+
         <li className="nav__item">
           <Link href="/[lang]" as={`/${locale}`}>
             <a>{t("headerMenu_titleHomeIcon")}</a>
@@ -67,14 +64,22 @@ const HeaderMenu = () => {
           {themeMenuOpen ? (
             <ThemeSwitcher themeMenuToggle={themeMenuToggle} />
           ) : (
-            <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
+            <img
+              onClick={themeMenuToggle}
+              src="/icons/pnp/iosgluph-sun-30.png"
+              alt="sun"
+            />
           )}
         </li>
         <li className="nav__item" title={t("headerMenu_titleLanguage")}>
           {langMenuOpen ? (
             <LocaleSwitcher langMenuToggle={langMenuToggle} />
           ) : (
-            <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
+            <img
+              onClick={langMenuToggle}
+              src="/icons/pnp/iosgluph-globus-30.png"
+              alt="globus"
+            />
           )}
         </li>
       </ul>
@@ -84,21 +89,29 @@ const HeaderMenu = () => {
           {themeMenuOpen ? (
             <ThemeSwitcher themeMenuToggle={themeMenuToggle} />
           ) : (
-            <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
+            <img
+              onClick={themeMenuToggle}
+              src="/icons/pnp/iosgluph-sun-30.png"
+              alt="sun"
+            />
           )}
         </i>
         <i className="icon">
           {langMenuOpen ? (
             <LocaleSwitcher langMenuToggle={langMenuToggle} />
           ) : (
-            <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
+            <img
+              onClick={langMenuToggle}
+              src="/icons/pnp/iosgluph-globus-30.png"
+              alt="globus"
+            />
           )}
         </i>
         <i className="icon" onClick={mobileMenuToggle}>
           {mobileMenuOpen ? (
-            <FontAwesomeIcon icon={faTimes} />
+            <img src="/icons/pnp/iosgluph-delete-30.png" alt="delete" />
           ) : (
-            <FontAwesomeIcon icon={faBars} />
+            <img src="/icons/pnp/iosgluph-menu-30.png" alt="menu" />
           )}
         </i>
       </div>
@@ -120,9 +133,9 @@ const HeaderMenu = () => {
           padding: 0;
           display: flex;
           justify-content: flex-end; /* Вирівнювання елементів по головній осі(x) вправо */
-          align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
+          /*align-items: center; /* Вирівнювання елементів по перетину осі(y) центр??? Коли забрав то вирівняло */
         }
-        /* Условие для экранов с шириной от 0 до 1200px */
+        /* Для екранов  0 до 1200px */
         @media (max-width: 1200px) {
           .nav {
             display: none; /*Временно удаляет элемент из документа */
@@ -175,7 +188,8 @@ const HeaderMenu = () => {
             align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
           }
           .icon {
-            height: 20px;
+            /* height: 20px; */
+            align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
             margin: 5px;
             padding: 0px;
           }
