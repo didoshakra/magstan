@@ -63,8 +63,6 @@ const HeaderMenu = () => {
             <a>{t("headerMenu_titleAboutME")}</a>
           </Link>
         </li>
-        {/* {themeMenu}
-        {langMenu} */}
         <li className="nav__item" title={t("headerMenu_titleTheme")}>
           {themeMenuOpen ? (
             <ThemeSwitcher themeMenuToggle={themeMenuToggle} />
@@ -82,12 +80,6 @@ const HeaderMenu = () => {
       </ul>
       {/* Кнопка для мобильной навигации */}
       <div className="menu-icon">
-        {/* Кнопка шестерня */}
-        {/* <i className="icon" onClick={mobileMenuToggle}>
-          <FontAwesomeIcon icon={faCog} />
-        </i> */}
-        {/* {themeMenu}
-        {langMenu} */}
         <i className="icon">
           {themeMenuOpen ? (
             <ThemeSwitcher themeMenuToggle={themeMenuToggle} />
