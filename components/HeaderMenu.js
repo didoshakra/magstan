@@ -11,7 +11,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 import useTranslation from "../translations/useTranslation";
 import { ComponentContext } from "../context/ComponentContext";
-import MobileNav from "./Navigation/MobileNav";
+import MobileNav from "./navigation/MobileNav";
 
 const HeaderMenu = () => {
   const { locale, t } = useTranslation();
