@@ -42,16 +42,17 @@ const MobileNav = props => {
   display: block;
   position: absolute;
   top: 0;
-  height: 100%;
+  /* height: 100%; */
+  height: 500px;
   width: 350px;
   right: -350px;
   padding: 50px;
-  background-color: rgba(11, 92, 65, 0.623);
-  transition: transform 1.4s ease-in;
-  transform: translateX(-100%);
-  /* transform: ${
-    props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"
-  }; */
+  border-radius: 10px;
+  /*background-color: rgba(11, 92, 65, 0.623);*/
+  background-color: rgba(66, 47, 58, 0.856);
+  /*background-color: rgba(11, 92, 65, 0.623);*/
+   transform: ${props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"};
+   transition: transform 0.4s ease-in;
 }
 /* При зменшенні екрану якщо не виключена кнопка щоб не показувало-не обовязково*/
 @media (min-width: 1199px) {

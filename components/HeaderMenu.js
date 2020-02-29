@@ -127,7 +127,8 @@ const HeaderMenu = () => {
         </i>
       </div>
       {/* Мобильная навигация */}
-      {mobileMenuOpen ? <MobileNav /> : ""}
+      {/* {mobileMenuOpen ? <MobileNav /> : ""} */}
+      <MobileNav mobileMenuOpen={mobileMenuOpen} />
       <style jsx>{`
         switche {
           margin: 5px 0 0;
