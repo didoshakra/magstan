@@ -59,7 +59,7 @@ const RegularMap = withScriptjs(
     >
       <Marker
         title="Магазин 'Станіславський2' вул.Тихого,2"
-        // label="Тихого"//Працює
+        label="Магазин 'Станіславський2' вул.Тихого,2" //Працює
         position={{ lat: 49.03847985, lng: 24.35112655 }}
         showInfo="true" ////не працює
         InfoWindow="InfoWindow Магазин 'Станіславський2'" //не працює
@@ -74,36 +74,42 @@ const RegularMap = withScriptjs(
         id="2"
         onClick={onClickMarker2}
         title="Павільйон 'Продукти 6*6' вул.Б.Хмельницького,2"
+        label="Павільйон 'Продукти 6*6' вул.Б.Хмельницького,2"
         position={{ lat: 49.04028737, lng: 24.35388654 }}
       />
       <Marker
         id="3"
         onClick={onClickMarker3}
         title="Магазин 'Продукти' вул.Пушкіна,2"
+        label="Магазин 'Продукти' вул.Пушкіна,2"
         position={{ lat: 49.03597241, lng: 24.36406016 }}
       />
       <Marker
         id="4"
         onClick={onClickMarker4}
         title="Магазин 'Дворик' вул.Л.Українки,2"
+        label="Магазин 'Дворик' вул.Л.Українки,2"
         position={{ lat: 49.03143197, lng: 24.36044455 }}
       />
       <Marker
         id="5"
         onClick={onClickMarker5}
         title="Магазин 'Тютюн' вул.Дзвонарська,2"
+        label="Магазин 'Тютюн' вул.Дзвонарська,2"
         position={{ lat: 49.02460823, lng: 24.36434448 }}
       />
       <Marker
         id="6"
         onClick={onClickMarker6}
         title="Павільйон '5*5' вул.Винниченка,2"
+        label="Павільйон '5*5'"
         position={{ lat: 49.02272274, lng: 24.36296582 }}
       />
       <Marker
         id="7"
         onClick={onClickMarker7}
         title="Магазин 'Станіславський' вул.С.Бандери,2"
+        label="'Станіславський'"
         position={{ lat: 49.02268756, lng: 24.37012732 }}
       />
     </GoogleMap>
