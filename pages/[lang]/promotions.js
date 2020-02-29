@@ -14,7 +14,10 @@ const Promotions = () => {
 
   return (
     // <Layout title="Portfolio">
-    <Layout title={t("pagePromotions_title")}>
+    <Layout
+      title={t("pagePromotions_title")}
+      description={t("pagePromotions_description")}
+    >
       <h1>{t("pagePromotions_title")}</h1>
       <Gallery images={images} />
     </Layout>

@@ -9,7 +9,10 @@ const Shops = () => {
   const { t } = useTranslation();
   return (
     // <Layout title="Shops">
-    <Layout title={t("pageShops_title")}>
+    <Layout
+      title={t("pageShops_title")}
+      description={t("pageShops_description")}
+    >
       {/* <h1>Our Shops</h1> */}
       <h1>{t("pageShops_title")}</h1>
       <div className="shops">
