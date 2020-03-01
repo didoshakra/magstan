@@ -79,14 +79,6 @@ const Layout = ({ children, title, description }) => {
         .content-wrapper {
           min-height: 600px;
           text-align: center;
-          /* max-width: 1200px; */
-          margin: 0px "auto";
-          padding: 0px 10px;
-        }
-        @media (max-width: 600px) {
-          content-wrapper {
-            max-width: 599px;
-          }
         }
       `}</style>
       <style jsx global>{`
