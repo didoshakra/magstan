@@ -39,8 +39,9 @@ const MobileNav = props => {
 
 .mobile-nav {
   z-index: 9;
-  display: block;
-  position: absolute;
+  /*display: block;*/
+  /*position: absolute;*//*на мобілках видно мені коли переміститись вправо*стрілка)*/
+  position: fixed;
   top: 0;
   /* height: 100%; */
   height: 500px;
