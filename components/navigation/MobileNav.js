@@ -48,7 +48,7 @@ const MobileNav = props => {
   /*right: -350px;*/
   right: 0px;
   padding: 50px;
-  border-radius: 10px;
+  border-radius: 5px;
   /*background-color: rgba(11, 92, 65, 0.623);*/
   background-color: rgba(66, 47, 58, 0.856);
   /*background-color: rgba(11, 92, 65, 0.623);*/
@@ -97,7 +97,7 @@ display: none; /* Не показує мобільне меню на екран�
  @media (max-width: 600px) {
   .mobile-nav {
     width: 320px;
-    right: -320px;
+    /*right: -320px;*/
 }
       `}</style>
     </div>
