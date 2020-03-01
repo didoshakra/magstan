@@ -46,16 +46,13 @@ const MobileNav = props => {
   /* height: 100%; */
   height: 500px;
   width: 350px;
-  /*right: -350px;*/
-  right: 0px;
+  right: -350px;
   padding: 50px;
   border-radius: 5px;
   /*background-color: rgba(11, 92, 65, 0.623);*/
   background-color: rgba(66, 47, 58, 0.856);
   /*background-color: rgba(11, 92, 65, 0.623);*/
-   /*transform: ${
-     props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"
-   };*/
+   transform: ${props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"};
    /* transform: "translateX(-100%)"; */
    transition: transform 0.4s ease-in;
 }
