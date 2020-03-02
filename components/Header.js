@@ -14,13 +14,21 @@ const Header = () => {
     setDrawerOpen(!drawerOpen);
   };
   return (
-    <div className="header-wrapper">
-      {/* <Drawer drawerOpen={drawerOpen} drawerOnClick={drawerOnClick} /> */}
-      {/* <DrawerButton drawerOpen={drawerOpen} drawerOnClick={drawerOnClick} /> */}
-      <Logo />
-      <HeaderMenu />
-
+    <div className="header-fixed">
+      <div className="header-wrapper">
+        {/* <Drawer drawerOpen={drawerOpen} drawerOnClick={drawerOnClick} /> */}
+        {/* <DrawerButton drawerOpen={drawerOpen} drawerOnClick={drawerOnClick} /> */}
+        <Logo />
+        <HeaderMenu />
+      </div>
       <style jsx>{`
+        .header-fixed {
+          position: fixed;
+          top: 0;
+          height: 60px;
+          width: 100%;
+          z-index: 100;
+        }
         .header-wrapper {
           padding: 10px; //Відступ зверху
           display: flex;

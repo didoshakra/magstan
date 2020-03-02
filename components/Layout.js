@@ -77,9 +77,9 @@ const Layout = ({ children, title, description }) => {
         /* Layout */
 
         .content-wrapper {
+          margin-top: 60px; /*Щоб контент не заїжджав під шапку*/
           min-height: 600px;
           text-align: center;
-          /* max-width: 1200px; */
           margin: 0px "auto";
           padding: 0px 10px;
         }
