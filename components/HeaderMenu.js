@@ -1,14 +1,7 @@
-import { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCog,
-  faTimes,
-  faBars,
-  faSun,
-  faGlobe
-} from "@fortawesome/free-solid-svg-icons";
-
+import { faBars, faSun, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import LocaleSwitcher from "./LocaleSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 import useTranslation from "../translations/useTranslation";
@@ -25,18 +18,15 @@ const HeaderMenu = () => {
 
   const langMenuToggle = () => {
     setLangMenuOpen(!langMenuOpen);
-    console.log("Menu.js/langMenuOpen", langMenuOpen);
   };
 
   const themeMenuToggle = () => {
     setThemeMenuOpen(!themeMenuOpen);
-    console.log("Menu.js/themeMenuOpen", themeMenuOpen);
   };
 
-  const mobileMenuToggle = () => {
-    console.log("Menu.js/mobileMenuOpen1", mobileMenuOpen);
-    setMobileMenuOpen(!mobileMenuOpen);
-    console.log("Menu.js/mobileMenuOpen2", mobileMenuOpen);
+  const mobileMenuToggle = arg => {
+    setMobileMenuOpen(arg);
+    // console.log("Menu.js/mobileMenuOpen2/arg =", arg);
   };
 
   return (
@@ -69,76 +59,40 @@ const HeaderMenu = () => {
             <a>{t("headerMenu_titleAboutME")}</a>
           </Link>
         </li>
+        {/* іконки теми і мови */}
         <li className="nav__item" title={t("headerMenu_titleTheme")}>
-          {themeMenuOpen ? (
-            <ThemeSwitcher themeMenuToggle={themeMenuToggle} />
-          ) : (
-            // <img
-            //   onClick={themeMenuToggle}
-            //   src="/icons/pnp/iosgluph-sun-30.png"
-            //   alt="sun"
-            //   />
-            <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
-          )}
+          <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
         </li>
         <li className="nav__item" title={t("headerMenu_titleLanguage")}>
-          {langMenuOpen ? (
-            <LocaleSwitcher langMenuToggle={langMenuToggle} />
-          ) : (
-            // <img
-            //   onClick={langMenuToggle}
-            //   src="/icons/pnp/iosgluph-globus-30.png"
-            //   alt="globus"
-            // />
-            <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
-          )}
+          <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
         </li>
       </ul>
-      {/* Кнопка для мобильной навигации */}
+      {/* Мобіцльна навігація*/}
       <div className="menu-icon">
+        {/* іконки теми і мови */}
         <i className="icon">
-          {themeMenuOpen ? (
-            <ThemeSwitcher themeMenuToggle={themeMenuToggle} />
-          ) : (
-            //
-            <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
-          )}
+          <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
         </i>
         <i className="icon">
-          {langMenuOpen ? (
-            <LocaleSwitcher langMenuToggle={langMenuToggle} />
-          ) : (
-            // <img
-            //   onClick={langMenuToggle}
-            //   src="/icons/pnp/iosgluph-globus-30.png"
-            //   alt="globus"
-            // />
-            <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
-          )}
+          <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
         </i>
-        <i className="icon" onClick={mobileMenuToggle}>
-          {mobileMenuOpen ? (
-            // <img src="/icons/pnp/iosgluph-delete-30.png" alt="delete" />
-            <FontAwesomeIcon icon={faTimes} />
-          ) : (
-            // <img src="/icons/pnp/iosgluph-menu-30.png" alt="menu" />
-            <FontAwesomeIcon icon={faBars} />
-          )}
+        {/* іконка мобільного меню */}
+        <i className="icon" onClick={() => mobileMenuToggle(true)}>
+          <FontAwesomeIcon icon={faBars} />
         </i>
       </div>
-      {/* Мобильная навигация */}
-      {/* {mobileMenuOpen ? <MobileNav /> : ""} */}
-      <MobileNav mobileMenuOpen={mobileMenuOpen} />
+
+      {/* випадаючі списки теми і мовиselect */}
+      {themeMenuOpen ? <ThemeSwitcher themeMenuToggle={themeMenuToggle} /> : ""}
+      {langMenuOpen ? <LocaleSwitcher langMenuToggle={langMenuToggle} /> : ""}
+      {/* Список мобильної навігації */}
+      <MobileNav
+        mobileMenuOpen={mobileMenuOpen}
+        mobileMenuToggle={mobileMenuToggle}
+      />
+
       <style jsx>{`
-        switche {
-          margin: 5px 0 0;
-          padding: 0;
-          list-style: none;
-          display: flex;
-        }
-
         /* ------------ Desktop navigation ----------- */
-
         .nav {
           list-style-type: none; /**Отменяет маркеры для списка. */
           margin: 0;
@@ -147,7 +101,7 @@ const HeaderMenu = () => {
           justify-content: flex-end; /* Вирівнювання елементів по головній осі(x) вправо */
           /*align-items: center; /* Вирівнювання елементів по перетину осі(y) центр??? Коли забрав то вирівняло */
         }
-        /* Для екранов  0 до 1200px */
+        /* Условие для экранов с шириной от 0 до 1200px */
         @media (max-width: 1200px) {
           .nav {
             display: none; /*Временно удаляет элемент из документа */

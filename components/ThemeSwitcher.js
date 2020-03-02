@@ -1,13 +1,14 @@
-import { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { ComponentContext } from "../context/ComponentContext";
 // import { themes, themesNames } from "../styles/theme";
 import useTranslation from "../translations/useTranslation";
 
 const ThemeSwitcher = props => {
+  const wrapperRef = useRef(null); //Для клацання поза обєктом
+  useOutsideAlerter(wrapperRef); //Для клацання поза обєктом
+
   const { t } = useTranslation();
-
   const themes = ["light", "dark", "other"];
-
   const themesNames = {
     light: t("theme_Light"),
     dark: t("theme_Dark"),
@@ -21,11 +22,31 @@ const ThemeSwitcher = props => {
   const handleThemeChange = React.useCallback(e => {
     // console.log("+++ /ThemeSwitcher.js/e.target.value=", e.target.value);
     dispatch({ type: "THEME", payload: e.target.value }); //Змінюємо state.locale
-    props.themeMenuToggle();
+    props.themeMenuToggle(); //Закриваєм меню
   });
 
+  function useOutsideAlerter(ref) {
+    //*** Для клацання поза елементом Решение с React ^ 16.8 с использованием хуков
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        //Якщо поза елементом
+        // alert("Ти клацнув поза мною!");
+        props.themeMenuToggle(); //Закриваєм меню
+      }
+    }
+    useEffect(() => {
+      // Прив’яжіть прослуховувач події
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Від’єднайте слухача події під час очищення
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    });
+  }
   return (
     <select
+      ref={wrapperRef} //Для клацання поза обєктом
+      // size="3"
       title={t("themeSwitcher_title")}
       value={themeType}
       onChange={handleThemeChange}
@@ -39,7 +60,11 @@ const ThemeSwitcher = props => {
 
       <style jsx>{`
         .select {
-          display: flex;
+          z-index: 9;
+          /*display: flex;*/
+          position: fixed;
+          top: 50px;
+          right: 30px;
           margin: 0 10px; //між блоками
           //justify-content: space-center; //Вирівнювання вправо
           // justify-content: space-between; //Вирівнювання вправо

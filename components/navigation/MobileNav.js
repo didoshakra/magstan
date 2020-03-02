@@ -1,15 +1,39 @@
 //MenuToggle.js //https://coursehunter.net/course/reactjs-s-nulya-do-profi
-import React from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import Link from "next/link";
 import useTranslation from "../../translations/useTranslation";
 
 const MobileNav = props => {
+  const wrapperRef = useRef(null); //Для клацання поза обєктом
+  useOutsideAlerter(wrapperRef); //Для клацання поза обєктом
   const { locale, t } = useTranslation();
+
+  function useOutsideAlerter(ref) {
+    //*** Для клацання поза елементом Решение с React ^ 16.8 с использованием хуков
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        //Якщо поза елементом
+        // alert("Ти клацнув поза мною!");
+        if (props.mobileMenuOpen) {
+          props.mobileMenuToggle(false); //Закриваєм меню
+        }
+      }
+    }
+    useEffect(() => {
+      // Прив’яжіть прослуховувач події
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Від’єднайте слухача події під час очищення
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    });
+  }
+
   return (
     //  Мобільна навігація
     <div className="mobile-nav">
       <div className="mobile-nav__title">Навігація</div>
-      <ul className="mobile-nav__list">
+      <ul ref={wrapperRef} className="mobile-nav__list">
         <li className="mobile-nav__item">
           <Link href="/[lang]" as={`/${locale}`}>
             <a className="mobile-nav__link">{t("headerMenu_titleHomeIcon")}</a>
@@ -39,21 +63,21 @@ const MobileNav = props => {
 
 .mobile-nav {
   z-index: 9;
-  /*display: block;*/
   /*position: absolute;*//*на мобілках видно мені коли переміститись вправо*стрілка)*/
   position: fixed;
   top: 0;
+  /*display:  ${props.mobileMenuOpen ? "block" : "none"};*/
+  /*display: block;*/
   /* height: 100%; */
   height: 500px;
   width: 350px;
   right: -350px;
   padding: 50px;
-  border-radius: 5px;
+  border-radius: 15px;
+  /*background: #fff;*/
   /*background-color: rgba(11, 92, 65, 0.623);*/
   background-color: rgba(66, 47, 58, 0.856);
-  /*background-color: rgba(11, 92, 65, 0.623);*/
    transform: ${props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"};
-   /* transform: "translateX(-100%)"; */
    transition: transform 0.4s ease-in;
 }
 /* При зменшенні екрану якщо не виключена кнопка щоб не показувало-не обовязково*/
@@ -62,7 +86,6 @@ const MobileNav = props => {
 display: none; /* Не показує мобільне меню на екранах>1199px */
   }
 }
-
 
 .mobile-nav__title {
   font-size: 28px;
@@ -92,11 +115,11 @@ display: none; /* Не показує мобільне меню на екран�
   color: #ffd600;
 }
 /*Для iphone 5*/
- @media (max-width: 600px) {
+ /*@media (max-width: 600px) {
   .mobile-nav {
     width: 320px;
-    /*right: -320px;*/
-}
+    right: -320px;
+}*/
       `}</style>
     </div>
   );
