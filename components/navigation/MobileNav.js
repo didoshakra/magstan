@@ -65,7 +65,7 @@ const MobileNav = props => {
   z-index: 9;
   /*position: absolute;*//*на мобілках видно мені коли переміститись вправо*стрілка)*/
   position: fixed;
-  top: 0;
+  top: 50px;
   /*display:  ${props.mobileMenuOpen ? "block" : "none"};*/
   /*display: block;*/
   /* height: 100%; */
