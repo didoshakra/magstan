@@ -1,6 +1,8 @@
 //MenuToggle.js //https://coursehunter.net/course/reactjs-s-nulya-do-profi
 import React, { useContext, useRef, useEffect } from "react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import useTranslation from "../../translations/useTranslation";
 
 const MobileNav = props => {
@@ -32,6 +34,9 @@ const MobileNav = props => {
   return (
     //  Мобільна навігація
     <div className="mobile-nav">
+      <i className="icon" onClick={() => props.mobileMenuToggle(false)}>
+        <FontAwesomeIcon icon={faChevronRight} />
+      </i>
       <div className="mobile-nav__title">Навігація</div>
       <ul ref={wrapperRef} className="mobile-nav__list">
         <li className="mobile-nav__item">
@@ -65,20 +70,26 @@ const MobileNav = props => {
   z-index: 9;
   /*position: absolute;*//*на мобілках видно мені коли переміститись вправо*стрілка)*/
   position: fixed;
-  top: 50px;
+  top: 0px;
   /*display:  ${props.mobileMenuOpen ? "block" : "none"};*/
   /*display: block;*/
   /* height: 100%; */
   height: 500px;
   width: 350px;
   right: -350px;
-  padding: 50px;
+  padding: 10px 50px;
   border-radius: 15px;
   /*background: #fff;*/
   /*background-color: rgba(11, 92, 65, 0.623);*/
   background-color: rgba(66, 47, 58, 0.856);
    transform: ${props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"};
    transition: transform 0.4s ease-in;
+}
+.mobile-nav .icon {
+  /* align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
+  color: #fff;
+  margin: 5px;
+  padding: 0px;
 }
 /* При зменшенні екрану якщо не виключена кнопка щоб не показувало-не обовязково*/
 @media (min-width: 1199px) {
