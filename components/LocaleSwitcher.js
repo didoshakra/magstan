@@ -38,9 +38,11 @@ const LocaleSwitcher = props => {
     useEffect(() => {
       // Прив’яжіть прослуховувач події
       document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("scroll", handleClickOutside); //Для скролу
       return () => {
         // Від’єднайте слухача події під час очищення
         document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("scroll", handleClickOutside);
       };
     });
   }

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import useTranslation from "../../translations/useTranslation";
-import GoogleMaps from "../../components/Re-google-map";
+import GoogleMaps from "../../components/React-google-map";
 
 //44
 const Shops = () => {
