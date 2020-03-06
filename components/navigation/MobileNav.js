@@ -43,7 +43,7 @@ const MobileNav = props => {
       <i className="icon" onClick={() => props.mobileMenuToggle(false)}>
         <FontAwesomeIcon icon={faChevronRight} />
       </i>
-      <div className="mobile-nav__title">Навігація</div>
+      <div className="mobile-nav__title">{t("headerMenu_titleNavMenu")}</div>
       <ul ref={wrapperRef} className="mobile-nav__list">
         <li className="mobile-nav__item">
           <Link href="/[lang]" as={`/${locale}`}>
