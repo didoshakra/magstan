@@ -36,12 +36,15 @@ const HeaderMenu = () => {
     if (!themeMenuOpen) {
       newTheme = "dark";
     }
+    console.log("HeaderMenu.js/newTheme=", newTheme);
     setThemeMenuOpen(!themeMenuOpen);
     dispatch({ type: "THEME", payload: newTheme }); //Змінюємо state.theme
   };
 
   const mobileMenuToggle = arg => {
     setMobileMenuOpen(arg);
+    // setMobileMenuOpen(!mobileMenuOpen);
+    console.log("Menu.js/mobileMenuOpen2/arg =", arg);
   };
 
   return (
@@ -49,6 +52,10 @@ const HeaderMenu = () => {
     <React.Fragment>
       {/* для десктопа */}
       <ul className="nav">
+        {/* <li className="nav__item">
+          <SwitcherExample />
+        </li> */}
+
         <li className="nav__item">
           <Link href="/[lang]" as={`/${locale}`}>
             <a>{t("headerMenu_titleHomeIcon")}</a>
@@ -71,7 +78,11 @@ const HeaderMenu = () => {
           </Link>
         </li>
         {/* іконка теми */}
-        <i className="nav__item" onClick={themeMenuToggle}>
+        <i
+          className="nav__item"
+          title={t("headerMenu_titleTheme")}
+          onClick={themeMenuToggle}
+        >
           {themeMenuOpen ? (
             <FontAwesomeIcon icon={faSun} />
           ) : (
@@ -86,7 +97,11 @@ const HeaderMenu = () => {
       {/* Мобіцльна навігація*/}
       <div className="menu-icon">
         {/* іконка теми */}
-        <i className="icon" onClick={themeMenuToggle}>
+        <i
+          className="icon"
+          title={t("headerMenu_titleTheme")}
+          onClick={themeMenuToggle}
+        >
           {themeMenuOpen ? (
             <FontAwesomeIcon icon={faSun} />
           ) : (
@@ -95,12 +110,17 @@ const HeaderMenu = () => {
         </i>
         {/* іконка мови */}
         <i className="icon">
-          <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
+          <FontAwesomeIcon
+            icon={faGlobe}
+            title={t("headerMenu_titleLanguage")}
+            onClick={langMenuToggle}
+          />
         </i>
         {/* іконк мобільного меню/гамбургер/ */}
         <i
           className="icon"
           onClick={() => mobileMenuToggle(mobileMenuOpen ? false : true)}
+          title={t("headerMenu_titleNavMenu")}
         >
           {/* <FontAwesomeIcon icon={faBars} /> */}
           <FontAwesomeIcon icon={faList} />
@@ -108,6 +128,7 @@ const HeaderMenu = () => {
       </div>
 
       {/* випадаючі списки теми і мовиselect */}
+      {/* {themeMenuOpen ? <ThemeSwitcher themeMenuToggle={themeMenuToggle} /> : ""} */}
       {langMenuOpen ? <LocaleSwitcher langMenuToggle={langMenuToggle} /> : ""}
       {/* Список мобильної навігації */}
       <MobileNav
@@ -123,6 +144,7 @@ const HeaderMenu = () => {
           padding: 0;
           display: flex;
           justify-content: flex-end; /* Вирівнювання елементів по головній осі(x) вправо */
+          /*align-items: center; /* Вирівнювання елементів по перетину осі(y) центр??? Коли забрав то вирівняло */
         }
         /* Условие для экранов с шириной от 0 до 1200px */
         @media (max-width: 1200px) {
@@ -133,6 +155,8 @@ const HeaderMenu = () => {
 
         .nav__item {
           margin-right: 50px;
+          /* padding: 10px; */
+          /* height: 20px; */
           margin: 10px;
           padding: 0px;
         }
@@ -156,6 +180,13 @@ const HeaderMenu = () => {
         .menu-icon {
           display: none;
           z-index: 19;
+          /* ustify-content: flex-end;
+          position: relative;
+          max-width: 100px;
+          height: 30px;
+          cursor: pointer;
+          margin: 10px;
+          padding: 10px; */
         }
 
         /* Для екранів з шириною  0 до 1200px */
