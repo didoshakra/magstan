@@ -1,11 +1,15 @@
 //MenuToggle.js //https://coursehunter.net/course/reactjs-s-nulya-do-profi
+//Виїжджаюче меню зправа по гамбургеру
 import React, { useContext, useRef, useEffect } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import useTranslation from "../../translations/useTranslation";
+import { ComponentContext } from "../../context/ComponentContext";
 
 const MobileNav = props => {
+  const { state } = useContext(ComponentContext);
+  const theme = state.theme;
   const wrapperRef = useRef(null); //Для клацання поза обєктом
   useOutsideAlerter(wrapperRef); //Для клацання поза обєктом
   const { locale, t } = useTranslation();
@@ -69,7 +73,7 @@ const MobileNav = props => {
       /* ----------------- Мобліна навігація ----------------- */
 
 .mobile-nav {
-  z-index: 9;
+  /*z-index: 9;*/
   /*position: absolute;*//*на мобілках видно мені коли переміститись вправо*стрілка)*/
   position: fixed;
   top: 0px;
@@ -80,12 +84,25 @@ const MobileNav = props => {
   width: 350px;
   right: -350px;
   padding: 10px 50px;
-  border-radius: 15px;
+  border-radius: 10px;
+  /* border-radius: 50px 0 0 50px; */
   /*background: #fff;*/
   /*background-color: rgba(11, 92, 65, 0.623);*/
-  background-color: rgba(66, 47, 58, 0.856);
-   transform: ${props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"};
-   transition: transform 0.4s ease-in;
+  /* background-color: rgba(66, 47, 58, 0.856); */
+  /* background-color: rgba(108,147,184, 0.9); */
+  background:${theme.colors.backgroundMenu};
+  transform: ${props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"};
+   /*transform: ${
+     props.mobileMenuOpen ? "translateX(-360px)" : "translateX(0px)"
+   };*/
+  transition: transform 0.4s ease-in;
+}
+
+/* При зменшенні екрану якщо не виключена кнопка щоб не показувало-не обовязково*/
+@media (min-width: 1199px) {
+  .mobile-nav {
+       display: none; /* Не показує мобільне меню на екранах>1199px */
+  }
 }
 .mobile-nav .icon {
   /* align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
@@ -93,13 +110,6 @@ const MobileNav = props => {
   margin: 5px;
   padding: 0px;
 }
-/* При зменшенні екрану якщо не виключена кнопка щоб не показувало-не обовязково*/
-@media (min-width: 1199px) {
-  .mobile-nav {
-display: none; /* Не показує мобільне меню на екранах>1199px */
-  }
-}
-
 .mobile-nav__title {
   font-size: 28px;
   font-weight: 800;
@@ -128,11 +138,12 @@ display: none; /* Не показує мобільне меню на екран�
   color: #ffd600;
 }
 /*Для iphone 5*/
- /*@media (max-width: 600px) {
+
+ @media (max-width: 600px) {
   .mobile-nav {
     width: 320px;
     right: -320px;
-}*/
+}
       `}</style>
     </div>
   );

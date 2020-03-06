@@ -18,7 +18,7 @@ import {
 
 const locale = "uk";
 const onClickMarker1 = evn => {
-  console.log("+++ /re-google-map.js/onMarkerClick/evn=", evn);
+  // console.log("+++ /re-google-map.js/onMarkerClick/evn=", evn);
   window.location.replace(`/${locale}/shops/#m1`); //!!!Міняє мову на Англійську!!! Не пересвічує сторінку, але не запамятовує останню подію в роуті)(не верне на пепередню сторінку по стрілці браузера назад)
   // window.location.href = "/en/shops/#m1";//Вертає назад по стрілці але пересвічує
   // window.location.assign("/en/shops/#m1");//Вертає назад по стрілці але пересвічує

@@ -23,10 +23,12 @@ const Logo = () => {
       </Link>
       <style jsx>{`
         .logo {
-          margin: 5px 0 0;
+          margin: 0;
+          padding: 0;
+          /* margin: 5px 0 0; */
           /*padding: 10;*/
           display: flex;
-          align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
+          /* align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
         }
         .logo img {
           display: block;
@@ -35,7 +37,7 @@ const Logo = () => {
         }
         .text {
           margin: 5px;
-          background: ${theme.colors.background1};
+          background: ${theme.colors.backgroundHead};
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.sansSerif};
         }

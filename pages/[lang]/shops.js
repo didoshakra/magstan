@@ -4,16 +4,13 @@ import Layout from "../../components/Layout";
 import useTranslation from "../../translations/useTranslation";
 import GoogleMaps from "../../components/React-google-map";
 
-//44
 const Shops = () => {
   const { t } = useTranslation();
   return (
-    // <Layout title="Shops">
     <Layout
       title={t("pageShops_title")}
       description={t("pageShops_description")}
     >
-      {/* <h1>Our Shops</h1> */}
       <h1>{t("pageShops_title")}</h1>
       <div className="shops">
         <div className="shops-list">
@@ -67,15 +64,16 @@ const Shops = () => {
             </div>
           </Link>
         </div>
+        <p id="map">
+          <GoogleMaps />
+        </p>
       </div>
-      <p id="map">
-        <GoogleMaps />
-      </p>
 
       <style jsx>{`
         .shops {
           max-width: 1000px;
           margin: 0 auto;
+          scroll-behavior: smooth; /*Плавна прокрутка всередині сторінки*/
         }
         .shops-list {
           padding: 0 30px;
@@ -85,19 +83,20 @@ const Shops = () => {
         }
 
         .shops .item {
-          // animation: radial-pulse 1s infinite;
+          overflow: hiden;
           overflow: hidden; //щоб изображение не выходило за рамки блока при увеличении. Не працює!!!
-          transition: all 0.4s linear; //Для плавної зміни розміру
+          //transition: all 0.4s linear; //Для плавної зміни розміру
           padding: 20px;
           margin-bottom: 40px;
           width: 50%;
         }
-        .shops .item:hover {
+
+        .shops .item img:hover {
           transform: scale(1.1);
+          transition: transform 0.4s ease-in;
           // transform: scale(0.5); // пропорциональное уменьшение элемента наполовину
           cursor: pointer; //рука
         }
-
         img {
           max-width: 100%;
         }

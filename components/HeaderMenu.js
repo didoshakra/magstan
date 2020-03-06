@@ -1,16 +1,26 @@
+//Праве меню з написами і їконками/змінюється при зменшенні
+//Два селекти-на мову і тему
 import React, { useContext, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faSun, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import {
+  faList,
+  faBars,
+  faMoon,
+  faSun,
+  faGlobe
+} from "@fortawesome/free-solid-svg-icons";
 import LocaleSwitcher from "./LocaleSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
+// import SwitcherExample from "./SwitcherExample";
 import useTranslation from "../translations/useTranslation";
 import { ComponentContext } from "../context/ComponentContext";
 import MobileNav from "./navigation/MobileNav";
 
 const HeaderMenu = () => {
   const { locale, t } = useTranslation();
-  const { state } = useContext(ComponentContext);
+  const { state, dispatch } = useContext(ComponentContext);
+  // const { state } = useContext(ComponentContext);
   const theme = state.theme;
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [themeMenuOpen, setThemeMenuOpen] = React.useState(false);
@@ -20,13 +30,18 @@ const HeaderMenu = () => {
     setLangMenuOpen(!langMenuOpen);
   };
 
+  //Використаємо старі змінні для 2-х тем setThemeMenuOpen='true'-theme: light
   const themeMenuToggle = () => {
+    var newTheme = "light";
+    if (!themeMenuOpen) {
+      newTheme = "dark";
+    }
     setThemeMenuOpen(!themeMenuOpen);
+    dispatch({ type: "THEME", payload: newTheme }); //Змінюємо state.theme
   };
 
   const mobileMenuToggle = arg => {
     setMobileMenuOpen(arg);
-    // console.log("Menu.js/mobileMenuOpen2/arg =", arg);
   };
 
   return (
@@ -34,10 +49,6 @@ const HeaderMenu = () => {
     <React.Fragment>
       {/* для десктопа */}
       <ul className="nav">
-        {/* <li className="nav__item">
-          <SwitcherExample />
-        </li> */}
-
         <li className="nav__item">
           <Link href="/[lang]" as={`/${locale}`}>
             <a>{t("headerMenu_titleHomeIcon")}</a>
@@ -59,31 +70,44 @@ const HeaderMenu = () => {
             <a>{t("headerMenu_titleAboutME")}</a>
           </Link>
         </li>
-        {/* іконки теми і мови */}
-        <li className="nav__item" title={t("headerMenu_titleTheme")}>
-          <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
-        </li>
+        {/* іконка теми */}
+        <i className="nav__item" onClick={themeMenuToggle}>
+          {themeMenuOpen ? (
+            <FontAwesomeIcon icon={faSun} />
+          ) : (
+            <FontAwesomeIcon icon={faMoon} />
+          )}
+        </i>
+        {/* іконка мови */}
         <li className="nav__item" title={t("headerMenu_titleLanguage")}>
           <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
         </li>
       </ul>
       {/* Мобіцльна навігація*/}
       <div className="menu-icon">
-        {/* іконки теми і мови */}
-        <i className="icon">
-          <FontAwesomeIcon icon={faSun} onClick={themeMenuToggle} />
+        {/* іконка теми */}
+        <i className="icon" onClick={themeMenuToggle}>
+          {themeMenuOpen ? (
+            <FontAwesomeIcon icon={faSun} />
+          ) : (
+            <FontAwesomeIcon icon={faMoon} />
+          )}
         </i>
+        {/* іконка мови */}
         <i className="icon">
           <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
         </i>
-        {/* іконка мобільного меню */}
-        <i className="icon" onClick={() => mobileMenuToggle(true)}>
-          <FontAwesomeIcon icon={faBars} />
+        {/* іконк мобільного меню/гамбургер/ */}
+        <i
+          className="icon"
+          onClick={() => mobileMenuToggle(mobileMenuOpen ? false : true)}
+        >
+          {/* <FontAwesomeIcon icon={faBars} /> */}
+          <FontAwesomeIcon icon={faList} />
         </i>
       </div>
 
       {/* випадаючі списки теми і мовиselect */}
-      {themeMenuOpen ? <ThemeSwitcher themeMenuToggle={themeMenuToggle} /> : ""}
       {langMenuOpen ? <LocaleSwitcher langMenuToggle={langMenuToggle} /> : ""}
       {/* Список мобильної навігації */}
       <MobileNav
@@ -99,7 +123,6 @@ const HeaderMenu = () => {
           padding: 0;
           display: flex;
           justify-content: flex-end; /* Вирівнювання елементів по головній осі(x) вправо */
-          /*align-items: center; /* Вирівнювання елементів по перетину осі(y) центр??? Коли забрав то вирівняло */
         }
         /* Условие для экранов с шириной от 0 до 1200px */
         @media (max-width: 1200px) {
@@ -110,8 +133,6 @@ const HeaderMenu = () => {
 
         .nav__item {
           margin-right: 50px;
-          /* padding: 10px; */
-          /* height: 20px; */
           margin: 10px;
           padding: 0px;
         }
@@ -135,13 +156,6 @@ const HeaderMenu = () => {
         .menu-icon {
           display: none;
           z-index: 19;
-          /* ustify-content: flex-end;
-          position: relative;
-          max-width: 100px;
-          height: 30px;
-          cursor: pointer;
-          margin: 10px;
-          padding: 10px; */
         }
 
         /* Для екранів з шириною  0 до 1200px */
@@ -165,8 +179,9 @@ const HeaderMenu = () => {
         /* //Динамічні стилі (Окремо, щоб при зміні були перераховані лише динамічні)*/
         .nav li a {
           color: ${theme.colors.text};
-          /* background: ${theme.colors.background1};*/
+           background: ${theme.colors.backgroundHead};*/
           font-family: ${theme.fontFamily.sansSerif};
+          font-weight: 600;
       `}</style>
     </React.Fragment>
   );

@@ -2,11 +2,8 @@
 import { useContext, useEffect } from "react";
 
 import Logo from "./Logo";
-import HeaderMenu from "./HeaderMenu";
 import { ComponentContext } from "../context/ComponentContext";
-// import DrawerButton from "./Navigation/DrawerBootton";
-// import Drawer from "./Navigation/Drawer";
-// import { faColumns } from "@fortawesome/free-solid-svg-icons";
+import HeaderMenu from "./HeaderMenu";
 
 var lastScrollTop = 0;
 var scrolUP = false;
@@ -14,47 +11,24 @@ var scrolUP = false;
 const Header = () => {
   const { state } = useContext(ComponentContext);
   const theme = state.theme;
-  // const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const [headerOpen, setHeaderOpen] = React.useState(true);
-  // const drawerOnClick = () => {
-  //   setDrawerOpen(!drawerOpen);
-  // };
+  const [headerOpen, setHeaderOpen] = React.useState(true); //*** щоб ховалась/появлялась Head при скролі
 
   //*** щоб ховалась/появлялась Head при скролі
   function mouseMove() {
-    // alert("Ти порухав мишкою!/mousemove");
-    // console.log("Header.js/скрол=", pageYOffset);
-    // console.log("Header.js/Y=", event.pageY);
     var st = pageYOffset;
-    console.log("Header.js/st=", st + "/lastScrollTop=", lastScrollTop);
     if (st > 100) {
       if (st - lastScrollTop > 0 || (st - lastScrollTop == 0 && !scrolUP)) {
-        console.log("Скрол вниз!");
         scrolUP = false;
-        // alert("Скрол вниз!");
         setHeaderOpen(false);
-        // downscroll code
       } else {
         setHeaderOpen(true);
         scrolUP = true;
-        console.log("Скрол вверх!");
       }
     } else {
       setHeaderOpen(true);
     }
     lastScrollTop = st;
   }
-
-  // var prevScrollpos = window.pageYOffset;
-  // function mouseMove() {
-  //   var currentScrollPos = window.pageYOffset;
-  //   if (prevScrollpos > currentScrollPos) {
-  //     setHeaderOpen(true);
-  //   } else {
-  //     setHeaderOpen(false);
-  //   }
-  //   prevScrollpos = currentScrollPos;
-  // }
 
   useEffect(() => {
     // Прив’яжіть прослуховувач події
@@ -69,8 +43,6 @@ const Header = () => {
 
   return (
     <div className="header-fixed">
-      {/* <Drawer drawerOpen={drawerOpen} drawerOnClick={drawerOnClick} />
-      <DrawerButton drawerOpen={drawerOpen} drawerOnClick={drawerOnClick} /> */}
       <div className="header-wrapper">
         <Logo />
         <HeaderMenu />
@@ -95,7 +67,7 @@ const Header = () => {
       `}</style>
       <style jsx>{`
       .header-wrapper {
-        background: ${theme.colors.background1};`}</style>
+        background: ${theme.colors.backgroundHead};`}</style>
     </div>
   );
 };
