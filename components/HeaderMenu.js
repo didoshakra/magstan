@@ -90,9 +90,9 @@ const HeaderMenu = () => {
           )}
         </i>
         {/* іконка мови */}
-        <li className="nav__item" title={t("headerMenu_titleLanguage")}>
+        <i className="nav__item" title={t("headerMenu_titleLanguage")}>
           <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
-        </li>
+        </i>
       </ul>
       {/* Мобіцльна навігація*/}
       <div className="menu-icon">
@@ -205,14 +205,12 @@ const HeaderMenu = () => {
             padding: 0px;
           }
         }
-      `}</style>
-      <style jsx>{`
-        /* //Динамічні стилі (Окремо, щоб при зміні були перераховані лише динамічні)*/
-        .nav li a {
-          color: ${theme.colors.text};
-           background: ${theme.colors.backgroundHead};*/
-          font-family: ${theme.fontFamily.sansSerif};
-          font-weight: 600;
+        .nav a, i {
+          color: ${theme.colors.textHead};
+          background: ${theme.colors.backgroundHead};
+          font-family: ${theme.fontFamily.serif};
+          font-size: 18px; //Рукавичка
+          font-weight: 200;
       `}</style>
     </React.Fragment>
   );

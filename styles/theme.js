@@ -7,18 +7,19 @@ export const themesNames = {
   other: "Інша"
 };
 
+//Для тем будемо міняти тільки кольори(theme.colors.)
 export const themeDark = {
   fontFamily: {
-    sansSerif: '-apple-system, "Helvetica Neue", Arial, sans-serif',
-    mono: "Menlo, Monaco, monospace"
-    //   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
-    //     "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
-    //   text-rendering: optimizeLegibility;
+    sansSerif: "Arial, sans-serif", //звичайні шрифти без засічок
+    serif: "Blogger Sans,Times, Times New Roman, serif", //звичайні шрифти з засічками
+    fixedWidth: "Courier New,Andale Mono, monospace", //Fixed-width
+    mimicHand: "Comic Sans MS, Comic Sans, cursive", //шрифти, що імітують почерк
+    decorative: "Trattatello,Luminari, fantasy" //декоративні шрифти, для назв
   },
   colors: {
     // text: "#333",
-    text: "#fff",
-    // text: "#454545",
+    text: "#fff", //білий
+    textHead: "#fff", //білий
     link: "#1eaaf1",
     linkHover: "#0d8ecf",
     border: "#ddd",
@@ -28,37 +29,35 @@ export const themeDark = {
     background: "#3f3f3f", //чорний grey[100] grey[900]
     background1: "#3f3f1f", //чорний grey[100] grey[900]
     backgroundHead: "rgba(63,63,31,1)",
-    backgroundMenu: "rgba(63,63,31,0.9)",
-    color: "#454545"
+    backgroundHeadMenu: "rgba(63,63,31,0.9)"
   }
 };
 
 export const themeLith = {
   fontFamily: {
-    sansSerif:
-      '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI","Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
-    mono: "Menlo, Monaco, monospace"
-    //   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
-    //     "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
-    //   text-rendering: optimizeLegibility;
+    sansSerif: "Arial, sans-serif", //звичайні шрифти без засічок
+    serif: "Blogger Sans,Times, Times New Roman, serif", //звичайні шрифти з засічками
+    fixedWidth: "Courier New,Andale Mono, monospace", //Fixed-width
+    mimicHand: "Comic Sans MS, Comic Sans, cursive", //шрифти, що імітують почерк
+    //mimicHand: "Snell Roundhand,Brush Script MT, Brush Script Std, cursive", //шрифти, що імітують почерк
+    decorative: "Trattatello,Luminari, fantasy" //декоративні шрифти, для назв
   },
   colors: {
-    // text: "#333",
-    text: "#121212", //чорний
-    text: "#060214",
     link: "#1eaaf1",
     linkHover: "#0d8ecf",
     border: "#ddd",
     warning: "#fff3cd",
     success: "#d4edda",
+    text: "#060214",
+    //textHead: "#333", //чорний
+    textHead: "#fff", //білий
+    backgroundHead: "rgba(21,103,179,1)",
+    backgroundHeadMenu: "rgba(21,103,179,0.9)",
+    background: "rgba(220,234,244,1)"
     // background: "#fff", //білий
-    background: "rgba(201,230,255,1)",
-    backgroundHead: "rgba(108,147,184,1)",
-    backgroundMenu: "rgba(108,147,184,0.9)",
-    // background1: "#fff3cd",
-    // background1: "#fff",
-    // background: "#333",
-    color: "#354545"
+    // background: "rgba(201,230,255,1)",
+    //backgroundHead: "rgba(108,147,184,1)",
+    //backgroundMenu: "rgba(108,147,184,0.9)",
   }
 };
 export const themeOther = {

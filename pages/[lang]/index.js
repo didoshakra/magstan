@@ -23,7 +23,6 @@ const Homepage = () => {
     <Layout title={t("pageHome_title")} description={t("pageHome_description")}>
       <div className="cover">
         <div className="hello">
-          {/* <img src="/StanLogo/-400.jpg" className="logo" /> */}
           <img src="/Ctan-400-231.jpg" className="logo" alt="StanLogo" />
           <h1>{t("pageHome_Welcome")}👋</h1>
           <h3>{t("pageHome_aboutPage")}</h3>
@@ -53,26 +52,29 @@ const Homepage = () => {
           background: transparent url(/photo/bananu-alkogol-obr.jpg) no-repeat
             center center;
           background-size: cover;
+          word-wrap: break-word;
         }
         .hello {
-          position: absolute;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          //position: absolute;
           top: 10px;
           left: 50px;
           // height: 300px;
-          padding: 10px;
+          padding: 5px;
           // margin: 5 px;
+          max-width: 250px;
           background: ${theme.colors.background};
           color: ${theme.colors.text};
-          font-family: ${theme.fontFamily.sansSerif};
-          // background: #3f3f3f;
+          font-family: ${theme.fontFamily.serif};
         }
         .hello h1 {
           // margin: 0 0 10px 0;
-          line-height: 0.01;
+          margin: 0;
         }
         .hello h3 {
-          line-height: inherit;
-          line-height: 0.01;
+          margin: 0;
         }
         a.view-more {
           text-transform: uppercase;
@@ -96,9 +98,8 @@ const Homepage = () => {
             left: 30px;
             right: 30px;
             font-size: 18px;
-            // padding: 20px;
             padding: 10px;
-            word-wrap: break-word; /* Перенос слів */
+            /*word-wrap: break-word;  Перенос слів */
           }
           h1 {
             font-size: 28px;

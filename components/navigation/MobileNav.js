@@ -90,7 +90,7 @@ const MobileNav = props => {
   /*background-color: rgba(11, 92, 65, 0.623);*/
   /* background-color: rgba(66, 47, 58, 0.856); */
   /* background-color: rgba(108,147,184, 0.9); */
-  background:${theme.colors.backgroundMenu};
+  background:${theme.colors.backgroundHeadMenu};
   transform: ${props.mobileMenuOpen ? "translateX(-100%)" : "translateX(0px)"};
    /*transform: ${
      props.mobileMenuOpen ? "translateX(-360px)" : "translateX(0px)"

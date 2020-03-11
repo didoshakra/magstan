@@ -37,9 +37,11 @@ const Logo = () => {
         }
         .text {
           margin: 5px;
+          color: ${theme.colors.textHead};
           background: ${theme.colors.backgroundHead};
-          color: ${theme.colors.text};
-          font-family: ${theme.fontFamily.sansSerif};
+          font-family: ${theme.fontFamily.serif};
+          font-size: 20px; //Рукавичка
+          font-weight: 800;
         }
 
         @media (max-width: 600px) {
