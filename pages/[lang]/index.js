@@ -126,14 +126,12 @@ const Homepage = () => {
           border-radius: 15px;
           background: ${theme.colors.backgroundPaper};
           box-shadow: ${theme.colors.boxShadowPaper};
-          //box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-          //background: #eee;
         }
         .paper h1 {
           text-align: center;
           border-radius: 15px;
           padding: 5px;
-          color: ${theme.colors.textHead};
+          color: ${theme.colors.text};
           font-family: ${theme.fontFamily.serif};
           background: ${theme.colors.backgroundPaperHead};
           box-shadow: ${theme.colors.boxShadowPaperHead};

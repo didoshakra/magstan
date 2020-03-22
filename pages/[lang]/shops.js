@@ -19,8 +19,6 @@ const Shops = () => {
         {/* //<div>-потрібен для того що чітко окреслити розміри внутрішнього контейнера */}
         <div className="paper">
           <h1>{t("pageShops_title")}</h1>
-          {/* <div className="shops"> */}
-          {/* <div className="shops-list"> */}
           <div className="card__list">
             <Link href="#map">
               <div className="card__item" title={t("pageShops_onMap")}>
@@ -106,7 +104,7 @@ const Shops = () => {
           margin: 15px 10px;
           text-align: center;
           border-radius: 15px;
-          color: ${theme.colors.textHead};
+          color: ${theme.colors.text};
           font-family: ${theme.fontFamily.serif};
           background: ${theme.colors.backgroundPaperHead};
           box-shadow: ${theme.colors.boxShadowPaperHead};
@@ -114,7 +112,7 @@ const Shops = () => {
         .card__list {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between; /*Первый элемент вначале, последний в конце */
+          justify-content: space-between; /*Перший ел зпочатку останній вкінці */
           max-width: 1240px;
           margin: auto;
         }
@@ -124,7 +122,7 @@ const Shops = () => {
           width: calc((100% - 40px) / 3); //Щирина при 2-х колонках
           overflow: hidden; //щоб изображение не выходило за рамки блока при увеличении. Не працює!!!
           border-radius: 15px;
-          color: ${theme.colors.textHead};
+          color: ${theme.colors.text};
           font-family: ${theme.fontFamily.serif};
           background: ${theme.colors.backgroundCard};
           box-shadow: ${theme.colors.boxShadowCard};

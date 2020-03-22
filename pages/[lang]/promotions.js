@@ -52,7 +52,7 @@ const Promotions = () => {
           margin: 15px 10px;
           text-align: center;
           border-radius: 15px;
-          color: ${theme.colors.textHead};
+          color: ${theme.colors.text};
           font-family: ${theme.fontFamily.serif};
           background: ${theme.colors.backgroundPaperHead};
           box-shadow: ${theme.colors.boxShadowPaperHead};
