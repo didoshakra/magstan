@@ -13,9 +13,9 @@ import {
 import LocaleSwitcher from "./LocaleSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 // import SwitcherExample from "./SwitcherExample";
-import useTranslation from "../translations/useTranslation";
-import { ComponentContext } from "../context/ComponentContext";
-import MobileNav from "./navigation/MobileNav";
+import useTranslation from "../../translations/useTranslation";
+import { ComponentContext } from "../../context/ComponentContext";
+import MobileNav from "../navigation/MobileNav";
 
 const HeaderMenu = () => {
   const { locale, t } = useTranslation();
@@ -96,6 +96,15 @@ const HeaderMenu = () => {
       </ul>
       {/* Мобіцльна навігація*/}
       <div className="menu-icon">
+        {/* іконк мобільного меню/гамбургер/ */}
+        <i
+          className="icon"
+          onClick={() => mobileMenuToggle(mobileMenuOpen ? false : true)}
+          title={t("headerMenu_titleNavMenu")}
+        >
+          {/* <FontAwesomeIcon icon={faBars} /> */}
+          <FontAwesomeIcon icon={faList} />
+        </i>
         {/* іконка теми */}
         <i
           className="icon"
@@ -116,25 +125,15 @@ const HeaderMenu = () => {
             onClick={langMenuToggle}
           />
         </i>
-        {/* іконк мобільного меню/гамбургер/ */}
-        <i
-          className="icon"
-          onClick={() => mobileMenuToggle(mobileMenuOpen ? false : true)}
-          title={t("headerMenu_titleNavMenu")}
-        >
-          {/* <FontAwesomeIcon icon={faBars} /> */}
-          <FontAwesomeIcon icon={faList} />
-        </i>
       </div>
-
-      {/* випадаючі списки теми і мовиselect */}
-      {/* {themeMenuOpen ? <ThemeSwitcher themeMenuToggle={themeMenuToggle} /> : ""} */}
-      {langMenuOpen ? <LocaleSwitcher langMenuToggle={langMenuToggle} /> : ""}
       {/* Список мобильної навігації */}
       <MobileNav
         mobileMenuOpen={mobileMenuOpen}
         mobileMenuToggle={mobileMenuToggle}
       />
+      {/* випадаючі списки теми і мовиselect */}
+      {/* {themeMenuOpen ? <ThemeSwitcher themeMenuToggle={themeMenuToggle} /> : ""} */}
+      {langMenuOpen ? <LocaleSwitcher langMenuToggle={langMenuToggle} /> : ""}
 
       <style jsx>{`
         /* ------------ Desktop navigation ----------- */

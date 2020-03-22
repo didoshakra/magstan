@@ -1,6 +1,6 @@
 //footer.js
 import { useContext } from "react";
-import { ComponentContext } from "../context/ComponentContext";
+import { ComponentContext } from "../../context/ComponentContext";
 
 const Footer = () => {
   const { state } = useContext(ComponentContext);

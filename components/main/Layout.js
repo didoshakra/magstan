@@ -4,8 +4,8 @@ import { useContext } from "react";
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
-import { ComponentContext } from "../context/ComponentContext";
-import useTranslation from "../translations/useTranslation";
+import { ComponentContext } from "../../context/ComponentContext";
+import useTranslation from "../../translations/useTranslation";
 
 const Layout = ({ children, title, description }) => {
   const { t } = useTranslation();

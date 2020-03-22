@@ -26,10 +26,20 @@ export const themeDark = {
     warning: "#fff3cd",
     success: "#d4edda",
     // background1: "#000", //чорний
-    background: "#3f3f3f", //чорний grey[100] grey[900]
-    background1: "#3f3f1f", //чорний grey[100] grey[900]
-    backgroundHead: "rgba(63,63,31,1)",
-    backgroundHeadMenu: "rgba(63,63,31,0.9)"
+    // background: "#3f3f3f", //чорний grey[100] grey[900]
+    // backgroundHead: "rgba(63,63,31,1)",
+    // backgroundHeadMenu: "rgba(63,63,31,0.9)",
+    // boxShadowPaper: "#3f3f3f",
+    // backgroundPaper: "rgba(63,63,31,1)"
+    background: "rgba(65,69,69,1)", //чорний grey[100] grey[900]
+    backgroundHead: "rgba(23,25,25,1)",
+    backgroundHeadMenu: "rgba(23,25,25,0.9)",
+    backgroundPaper: "rgba(65,69,69,1)",
+    boxShadowPaper: "2px 2px 2px rgba(0, 0, 0, 0.5)",
+    backgroundPaperHead: "rgba(23,25,25,0.7)",
+    boxShadowPaperHead: "rgba(23,25,25,0.9)",
+    backgroundCard: "rgb(223, 222, 222)",
+    boxShadowCard: "2px 2px 2px rgba(0, 0, 0, 0.5)"
   }
 };
 
@@ -49,15 +59,19 @@ export const themeLith = {
     warning: "#fff3cd",
     success: "#d4edda",
     text: "#060214",
-    //textHead: "#333", //чорний
+    // textHead: "#333", //чорний
     textHead: "#fff", //білий
     backgroundHead: "rgba(21,103,179,1)",
     backgroundHeadMenu: "rgba(21,103,179,0.9)",
-    background: "rgba(220,234,244,1)"
-    // background: "#fff", //білий
-    // background: "rgba(201,230,255,1)",
-    //backgroundHead: "rgba(108,147,184,1)",
-    //backgroundMenu: "rgba(108,147,184,0.9)",
+    //background: "rgba(220,234,244,1)",
+    background: "rgb(223, 222, 222)", //Основа
+    backgroundPaper: "rgb(223, 222, 222)",
+    boxShadowPaper: "2px 2px 2px rgba(0, 0, 0, 0.6)",
+    //backgroundCard: "rgb(223, 222, 222)",
+    backgroundCard: "rgba(187,190,190,0.5)",
+    boxShadowCard: "2px 2px 2px rgba(0, 0, 0, 0.6)",
+    backgroundPaperHead: "rgba(187,190,190,1)",
+    boxShadowPaperHead: "2px 2px 2px rgba(0, 0, 0, 0.6)"
   }
 };
 export const themeOther = {

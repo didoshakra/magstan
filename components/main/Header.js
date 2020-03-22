@@ -2,7 +2,7 @@
 import { useContext, useEffect } from "react";
 
 import Logo from "./Logo";
-import { ComponentContext } from "../context/ComponentContext";
+import { ComponentContext } from "../../context/ComponentContext";
 import HeaderMenu from "./HeaderMenu";
 
 var lastScrollTop = 0;

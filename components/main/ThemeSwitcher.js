@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useEffect } from "react";
-import { ComponentContext } from "../context/ComponentContext";
+import { ComponentContext } from "../../context/ComponentContext";
 // import { themes, themesNames } from "../styles/theme";
-import useTranslation from "../translations/useTranslation";
+import useTranslation from "../../translations/useTranslation";
 
 const ThemeSwitcher = props => {
   const wrapperRef = useRef(null); //Для клацання поза обєктом

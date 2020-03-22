@@ -1,8 +1,8 @@
 //logo.js
 import Link from "next/link";
 import { useContext } from "react";
-import useTranslation from "../translations/useTranslation";
-import { ComponentContext } from "../context/ComponentContext";
+import useTranslation from "../../translations/useTranslation";
+import { ComponentContext } from "../../context/ComponentContext";
 
 // const Logo = () => (
 const Logo = () => {

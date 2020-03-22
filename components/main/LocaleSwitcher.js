@@ -1,9 +1,9 @@
 // import React from "react";
 import React, { useContext, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
-import { locales, languageNames } from "../translations/config";
-import { ComponentContext } from "../context/ComponentContext";
-import useTranslation from "../translations/useTranslation";
+import { locales, languageNames } from "../../translations/config";
+import { ComponentContext } from "../../context/ComponentContext";
+import useTranslation from "../../translations/useTranslation";
 
 const LocaleSwitcher = props => {
   const wrapperRef = useRef(null); //Для клацання поза обєктом
