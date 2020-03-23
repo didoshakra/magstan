@@ -119,7 +119,7 @@ const Shops = () => {
         .card__item {
           padding: 10px;
           margin: 0 0 20px;
-          width: calc((100% - 40px) / 3); //Щирина при 2-х колонках
+          width: calc((100% - 40px) / 3); //Щирина при 3-х колонках
           overflow: hidden; //щоб изображение не выходило за рамки блока при увеличении. Не працює!!!
           border-radius: 15px;
           color: ${theme.colors.text};
@@ -147,6 +147,13 @@ const Shops = () => {
           color: #777;
         }
 
+        //iPad
+        @media (max-width: 960px) {
+          .card__item {
+            width: calc((100% - 40px) / 2); //Щирина при 2-х колонках
+            padding: 10px 20px;
+          }
+        }
         @media (max-width: 600px) {
           .card__item {
             width: auto;
