@@ -63,8 +63,10 @@ const About = () => {
           border-radius: 15px;
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.serif};
-          background: ${theme.colors.backgroundPaperHead};
-          box-shadow: ${theme.colors.boxShadowPaperHead};
+          //background: ${theme.colors.backgroundPaperHead};
+          background: ${theme.colors.backgroundPaper};
+          //box-shadow: ${theme.colors.boxShadowPaperHead};
+          box-shadow: ${theme.colors.boxShadowPaper};
         }
         .card__list {
           display: flex;
@@ -81,8 +83,10 @@ const About = () => {
           border-radius: 15px;
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.serif};
-          background: ${theme.colors.backgroundCard};
-          box-shadow: ${theme.colors.boxShadowCard};
+          //background: ${theme.colors.backgroundCard};
+          background: ${theme.colors.backgroundPaper};
+          //box-shadow: ${theme.colors.boxShadowCard};
+          box-shadow: ${theme.colors.boxShadowPaper};
         }
 
         .card__item img:hover {

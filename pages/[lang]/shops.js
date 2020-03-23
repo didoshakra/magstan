@@ -106,8 +106,8 @@ const Shops = () => {
           border-radius: 15px;
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.serif};
-          background: ${theme.colors.backgroundPaperHead};
-          box-shadow: ${theme.colors.boxShadowPaperHead};
+          background: ${theme.colors.backgroundPaper};
+          box-shadow: ${theme.colors.boxShadowPaper};
         }
         .card__list {
           display: flex;
@@ -124,8 +124,8 @@ const Shops = () => {
           border-radius: 15px;
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.serif};
-          background: ${theme.colors.backgroundCard};
-          box-shadow: ${theme.colors.boxShadowCard};
+          background: ${theme.colors.backgroundPaper};
+          box-shadow: ${theme.colors.boxShadowPaper};
         }
 
         .card__item img:hover {

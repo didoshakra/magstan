@@ -6,7 +6,7 @@ const Gallery = ({ images }) => {
   const { state } = useContext(ComponentContext);
   const theme = state.theme;
   return (
-    <div className="card">
+    <div className="card__item">
       {/* <div class="paper"> */}
       {images.map(image => {
         return (
@@ -17,7 +17,7 @@ const Gallery = ({ images }) => {
       })}
       {/* </div> */}
       <style jsx>{`
-        .card {
+        .card__item {
           display: flex;
           flex-wrap: wrap;
           //justify-content: stretch; /* элементы имеют "авто-размер", чтобы соответствовать   контейнеру*/
@@ -25,6 +25,12 @@ const Gallery = ({ images }) => {
           //margin-bottom: 50px;
           max-width: 1240px;
           margin: 0 auto;
+        }
+        .card__item img:hover {
+          transform: scale(1.1);
+          transition: transform 0.4s ease-in;
+          // transform: scale(0.5); // пропорциональное уменьшение элемента наполовину
+          cursor: pointer; //рука
         }
         .image {
           padding: 20px;
