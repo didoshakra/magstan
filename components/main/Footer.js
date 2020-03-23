@@ -6,7 +6,7 @@ const Footer = () => {
   const { state } = useContext(ComponentContext);
   const theme = state.theme;
   return (
-    <div className="footer-wrapper">
+    <div className="footer__wrapper">
       <div className="copyright">© {new Date().getFullYear()} stan.if.ua.</div>
       <style jsx>{`
       //Статичні стилі
@@ -20,7 +20,7 @@ const Footer = () => {
       `}</style>
       <style jsx>{`
       //Динамічні стилі (Окремо, щоб при зміні були перераховані лише динамічні)
-      .footer-wrapper {
+      .footer__wrapper {
           background: ${theme.colors.background1};
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.sansSerif};
