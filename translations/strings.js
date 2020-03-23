@@ -3,11 +3,8 @@
 const strings = {
   en: {
     loyOut_title: "MS Kalush",
-    theme_Light: "Light",
-    theme_Dark: "Dark",
-    theme_Other: "Other",
+
     logo_logoTitle: "Home",
-    themeSwitcher_title: "Select a theme",
     localeSwitcher_title: "Select a language",
     headerMenu_titleShops: "Shops",
     headerMenu_titleServices: "Services",
@@ -15,7 +12,7 @@ const strings = {
     headerMenu_titleAboutME: "About us",
     headerMenu_titleHomeIcon: "Home",
     headerMenu_titleSite: "Test Site",
-    headerMenu_titleTheme: "Change Theme (Light / Dark)",
+    headerMenu_titleTheme: "Toggle light/dark theme)",
     headerMenu_titleLanguage: "Change Language",
     headerMenu_titleNavMenu: "Navigation",
     pageHome_title: "Food, beverages, cigarettes, alcohol ...",
@@ -61,10 +58,6 @@ const strings = {
   },
   pl: {
     loyOut_title: "MS Kalush",
-    theme_Light: "Światło",
-    theme_Dark: "Сiemno",
-    theme_Other: "Inny",
-    themeSwitcher_title: "Wybierz motyw",
     localeSwitcher_title: "Wybierz język",
     logo_logoTitle: "Strona główna",
     headerMenu_titleShops: "Sklepy",
@@ -74,7 +67,7 @@ const strings = {
     headerMenu_titleAppIcon: "Add_ons",
     headerMenu_titleHomeIcon: "Główna",
     headerMenu_titleSite: "Test Site",
-    headerMenu_titleTheme: "Zmień motyw (jasny / ciemny)",
+    headerMenu_titleTheme: "Przełącz motyw jasny / ciemny",
     headerMenu_titleLanguage: "Zmień język",
     headerMenu_titleNavMenu: "Nawigacja",
     pageHome_title: "Jedzenie, napoje, papierosy, alkohol ...",
@@ -120,10 +113,6 @@ const strings = {
   },
   uk: {
     loyOut_title: "МС Калуш", //=48 (40–65сим/з пробілами (мах–80))
-    theme_Light: "Світла",
-    theme_Dark: "Темна",
-    theme_Other: "Інша",
-    themeSwitcher_title: "Виберіть тему",
     localeSwitcher_title: "Виберіть мову",
     logo_logoTitle: "На головну",
     headerMenu_titleShops: "Магазини",
@@ -133,7 +122,7 @@ const strings = {
     headerMenu_titleHomeIcon: "На головну",
     headerMenu_titleSite: "Станіславський",
     headerMenu_openDrawer: "Відкрити головну навігацію",
-    headerMenu_titleTheme: "Змінити тему (світлу / темну)",
+    headerMenu_titleTheme: "Перемкнути тему світлу/темну",
     headerMenu_titleLanguage: "Змінити мову",
     headerMenu_titleNavMenu: "Навігація",
     pageHome_title: "Продукти харчування, напої, сигарети, алкоголь...",

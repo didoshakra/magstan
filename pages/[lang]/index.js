@@ -60,8 +60,8 @@ const Homepage = () => {
           min-height: 600px;
           /*background: transparent url(bananu-alkogol-neobr-opt.jpg) no-repeat*/
           /*background: transparent url(/photo/produkty_small_opt.jpg) no-repeat*/
-          background: transparent url(${theme.colors.img}) no-repeat center
-            center;
+          background: transparent url(${theme.images.backgroundHome}) no-repeat
+            center center;
           background-size: cover;
           word-wrap: break-word;
         }
