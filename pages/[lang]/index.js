@@ -58,7 +58,7 @@ const Homepage = () => {
         .cover {
           position: relative;
           min-height: 600px;
-          /*background: transparent url(/photo/bananu-alkogol-obr.jpg) no-repeat*/
+          /*background: transparent url(bananu-alkogol-neobr-opt.jpg) no-repeat*/
           /*background: transparent url(/photo/produkty_small_opt.jpg) no-repeat*/
           background: transparent url(${theme.colors.img}) no-repeat center
             center;

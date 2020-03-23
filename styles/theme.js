@@ -17,7 +17,7 @@ export const themeDark = {
     decorative: "Trattatello,Luminari, fantasy" //декоративні шрифти, для назв
   },
   colors: {
-    img: "/photo/bananu-alkogol-obr.jpg",
+    img: "/photo/bananu-alkogol-neobr-opt.jpg",
     // link: "#1eaaf1",
     // linkHover: "#0d8ecf",
     // border: "#ddd",
