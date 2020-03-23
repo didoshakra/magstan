@@ -20,8 +20,8 @@ import MobileNav from "../navigation/MobileNav";
 const HeaderMenu = () => {
   const { locale, t } = useTranslation();
   const { state, dispatch } = useContext(ComponentContext);
-  // const { state } = useContext(ComponentContext);
-  const theme = state.theme;
+  // const theme = state.theme;
+  const { theme, themeType } = state;
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [themeMenuOpen, setThemeMenuOpen] = React.useState(false);
   const [langMenuOpen, setLangMenuOpen] = React.useState(false);
@@ -30,10 +30,9 @@ const HeaderMenu = () => {
     setLangMenuOpen(!langMenuOpen);
   };
 
-  //Використаємо старі змінні для 2-х тем setThemeMenuOpen='true'-theme: light
   const themeMenuToggle = () => {
     var newTheme = "light";
-    if (!themeMenuOpen) {
+    if (themeType === "light") {
       newTheme = "dark";
     }
     console.log("HeaderMenu.js/newTheme=", newTheme);
