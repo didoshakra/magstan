@@ -12,31 +12,29 @@ const Logo = () => {
   return (
     <div className="logo">
       <Link href="/[lang]" as={`/${locale}`}>
-        <a title={t("logo_logoTitle")}>
-          <img src="/StanLogo-80.jpg" alt="StanLogo" />
-        </a>
+        <img
+          title={t("logo_logoTitle")}
+          src="/StanLogo-80.jpg"
+          alt="StanLogo"
+        />
       </Link>
       <Link href="/[lang]" as={`/${locale}`}>
-        <a title={t("logo_logoTitle")} className="text">
-          Станіславський
-        </a>
+        {/* <a title={t("logo_lo/goTitle")} className="text"> */}
+        <a title={t("logo_logoTitle")}>Станіславський</a>
       </Link>
       <style jsx>{`
         .logo {
           margin: 0;
           padding: 0;
-          /* margin: 5px 0 0; */
-          /*padding: 10;*/
           display: flex;
-          /* align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
+          align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
         }
         .logo img {
-          display: block;
-          /* width: 80px;*/
-          /* top: 20px; */
+          margin-left: 5px; //Відступ від кожного елемента зліва
         }
-        .text {
-          margin: 5px;
+        /* .text { */
+        .logo a {
+          margin-left: 5px; //Відступ від кожного елемента зліва
           color: ${theme.colors.textHead};
           background: ${theme.colors.backgroundHead};
           font-family: ${theme.fontFamily.serif};
@@ -45,7 +43,7 @@ const Logo = () => {
         }
 
         @media (max-width: 600px) {
-          .text {
+          .logo a {
             display: none;
           }
         }

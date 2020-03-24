@@ -20,14 +20,11 @@ const images = [
 const Homepage = () => {
   const { locale, t } = useTranslation();
   const { state } = useContext(ComponentContext);
-  // const theme = state.theme;
-  const { theme, themeType } = state;
-  console.log("index.js/ Homepage/themeType=", themeType);
-  // const urlTitulImg = {
-  //   themeType === "light"
-  //     ? "/photo/produkty_small_opt.jpg"
-  //     : "/photo/bananu-alkogol-obr.jpg"
-  // };
+  const { theme, themeTypeLight } = state;
+  console.log("index.js/ Homepage/themeTypeLight=", themeTypeLight);
+  const backgroundHome = themeTypeLight
+    ? `/photo/produkty_small_opt.jpg`
+    : `/photo/bananu-alkogol-neobr-opt.jpg`;
   // const urlTitulImg = "/photo/produkty_small_opt.jpg";
   return (
     <Layout title={t("pageHome_title")} description={t("pageHome_description")}>
@@ -60,8 +57,8 @@ const Homepage = () => {
           min-height: 600px;
           /*background: transparent url(bananu-alkogol-neobr-opt.jpg) no-repeat*/
           /*background: transparent url(/photo/produkty_small_opt.jpg) no-repeat*/
-          background: transparent url(${theme.images.backgroundHome}) no-repeat
-            center center;
+          //background: transparent url(${backgroundHome}) no-repeat center center;
+          background:  url(${backgroundHome}) no-repeat center center;
           background-size: cover;
           word-wrap: break-word;
         }

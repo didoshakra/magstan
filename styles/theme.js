@@ -43,9 +43,6 @@ export const themeDark = {
     //backgroundCard: "rgb(223, 222, 222)",
     backgroundCard: "rgba(64,61,51,0.6)",
     boxShadowCard: "2px 2px 2px rgba(23,25,25,0.9)"
-  },
-  images: {
-    backgroundHome: "/photo/bananu-alkogol-neobr-opt.jpg"
   }
 };
 
@@ -79,9 +76,6 @@ export const themeLith = {
     boxShadowCard: "2px 2px 2px rgba(0, 0, 0, 0.6)",
     backgroundPaperHead: "rgba(187,190,190,1)",
     boxShadowPaperHead: "2px 2px 2px rgba(0, 0, 0, 0.6)"
-  },
-  images: {
-    backgroundHome: "/photo/produkty_small_opt.jpg"
   }
 };
 export const themeOther = {
