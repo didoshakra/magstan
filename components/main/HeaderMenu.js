@@ -150,15 +150,13 @@ const HeaderMenu = () => {
 
         .nav__item {
           margin-right: 50px;
-          /* padding: 10px; */
-          /* height: 20px; */
           margin: 10px;
           padding: 0px;
         }
 
-        .nav__item:last-child {
+        /*.nav__item:last-child {
           margin-right: 0px;
-        }
+        }*/
 
         .nav__link {
           font-size: 22px;
@@ -175,13 +173,6 @@ const HeaderMenu = () => {
         .menu-icon {
           display: none;
           z-index: 19;
-          /* ustify-content: flex-end;
-          position: relative;
-          max-width: 100px;
-          height: 30px;
-          cursor: pointer;
-          margin: 10px;
-          padding: 10px; */
         }
 
         /* Для екранів з шириною  0 до 1200px */
@@ -189,7 +180,6 @@ const HeaderMenu = () => {
         @media (max-width: 1200px) {
           .menu-icon {
             display: flex;
-            /* justify-content: center; */
             justify-content: flex-end; /* Вирівнювання елементів по головній осі(x) вправо */
             align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
           }

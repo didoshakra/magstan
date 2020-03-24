@@ -58,7 +58,7 @@ const Header = () => {
           z-index: 100;
         }
         .header-wrapper {
-          padding: 10px; /*Відступ зверху*/
+          //padding: 10px; /*Відступ зверху*/
           max-height: 60px;
           display: flex;
           justify-content: space-between; /*Вирівнювання вправо*/
