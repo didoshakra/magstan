@@ -122,7 +122,7 @@ const strings = {
     headerMenu_titleHomeIcon: "На головну",
     headerMenu_titleSite: "Станіславський",
     headerMenu_openDrawer: "Відкрити головну навігацію",
-    headerMenu_titleTheme: "Перемкнути тему світлу/темну",
+    headerMenu_titleTheme: "Змінити тему світлу/темну",
     headerMenu_titleLanguage: "Змінити мову",
     headerMenu_titleNavMenu: "Навігація",
     pageHome_title: "Продукти харчування, напої, сигарети, алкоголь...",
