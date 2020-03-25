@@ -149,14 +149,14 @@ const HeaderMenu = () => {
         }
 
         .nav__item {
-          margin-right: 50px;
+          margin-right: 20px;
           //margin: 10px;
           padding: 0px;
         }
 
-        /*.nav__item:last-child {
-          margin-right: 0px;
-        }*/
+        .nav__item:last-child {
+          margin-right: 5px;
+        }
 
         .nav__link {
           font-size: 22px;
