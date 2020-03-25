@@ -150,7 +150,7 @@ const HeaderMenu = () => {
 
         .nav__item {
           margin-right: 50px;
-          margin: 10px;
+          //margin: 10px;
           padding: 0px;
         }
 
@@ -172,7 +172,7 @@ const HeaderMenu = () => {
 
         .menu-icon {
           display: none;
-          z-index: 19;
+          //z-index: 19;
         }
 
         /* Для екранів з шириною  0 до 1200px */
@@ -190,12 +190,14 @@ const HeaderMenu = () => {
             padding: 0px;
           }
         }
-        .nav a, i {
+        .nav a,
+        i {
           color: ${theme.colors.textHead};
           background: ${theme.colors.backgroundHead};
           font-family: ${theme.fontFamily.serif};
           font-size: 18px; //Рукавичка
           font-weight: 200;
+        }
       `}</style>
     </React.Fragment>
   );

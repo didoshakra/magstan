@@ -51,6 +51,7 @@ const Header = () => {
       <style jsx>{`
         .header-fixed {
           position: fixed;
+          //Сховати header
           top: ${headerOpen ? "0" : "-60px"};
           height: 60px;
           width: 100%;
@@ -59,7 +60,8 @@ const Header = () => {
         }
         .header-wrapper {
           //padding: 10px; /*Відступ зверху*/
-          max-height: 60px;
+          //max-height: 60px;
+          height: 60px;
           display: flex;
           justify-content: space-between; /*Вирівнювання вправо*/
           align-items: center;
