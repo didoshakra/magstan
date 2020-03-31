@@ -113,7 +113,7 @@ const LocaleSwitcher = () => {
         .icon:hover {
           color: ${theme.colors.textHeadHover};
           background: ${theme.colors.textBackgroundHeadHover};
-          //cursor: pointer;
+          cursor: pointer;
         }
         .dropdown-content {
           //плавно проявляється (opacity 0.5s)

@@ -62,6 +62,7 @@ const HeaderSeting = () => {
         .icon:hover {
           color: ${theme.colors.textHeadHover};
           background: ${theme.colors.textBackgroundHeadHover};
+          cursor: pointer; //Рука
           //cursor: pointer;
         }
       `}</style>
