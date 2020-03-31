@@ -1,202 +1,115 @@
-///Праве меню з написами і їконками/змінюється при зменшенні
-//Селектор мови/Дві теми-іконки(themeTypeLight)
+//HeaderMenu.js//Селектор мови+Дві теми-іконки(themeTypeLight)
+//Після розділення на HeaderMenu+HeaderSeting
+//список меню з масиву menu
 
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faList,
-  faMoon,
-  faSun,
-  faGlobe
-} from "@fortawesome/free-solid-svg-icons";
-import LocaleSwitcher from "./LocaleSwitcher";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 import useTranslation from "../../translations/useTranslation";
 import { ComponentContext } from "../../context/ComponentContext";
-import MobileNav from "../navigation/MobileNav";
+import HeaderMenuMobile from "./HeaderMenuMobile";
 
 const HeaderMenu = () => {
   const { locale, t } = useTranslation();
-  const { state, dispatch } = useContext(ComponentContext);
-  // const theme = state.theme;
-  const { theme, themeTypeLight } = state;
+  const { state } = useContext(ComponentContext);
+  const { theme } = state;
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [langMenuOpen, setLangMenuOpen] = React.useState(false);
-
-  const langMenuToggle = () => {
-    setLangMenuOpen(!langMenuOpen);
-  };
-
-  const themeMenuToggle = () => {
-    var newTheme = "light";
-    // if (themeType === "light") {
-    if (themeTypeLight) {
-      newTheme = "dark";
-    }
-    // console.log("HeaderMenu.js/newTheme=", newTheme);
-    dispatch({ type: "THEME", payload: newTheme }); //Змінюємо state.theme
-  };
 
   const mobileMenuToggle = arg => {
     setMobileMenuOpen(arg);
-    // setMobileMenuOpen(!mobileMenuOpen);
-    console.log("Menu.js/mobileMenuOpen2/arg =", arg);
+    // console.log("Menu.js/mobileMenuOpen2/arg =", arg);
+  };
+
+  const menu = [
+    {
+      a: t("headerMenu_titleHomeIcon"),
+      link: "/" //Чистий маршрут as={`/${locale} добавлено в menu.map/Link href
+    },
+    {
+      a: t("headerMenu_titlePromotions"),
+      link: "/promotions"
+    },
+    {
+      a: t("headerMenu_titleShops"),
+      link: "/shops"
+    },
+    {
+      a: t("headerMenu_titleAboutME"),
+      link: "/about"
+    }
+  ];
+
+  const renderMenu = () => {
+    return menu.map((item, index) => {
+      return (
+        <li className="g-nav__item" key={index}>
+          <Link href={`/[lang]${item.link}`} as={`/${locale}${item.link}`}>
+            <a className="g-nav__item-a">{item.a}</a>
+          </Link>
+        </li>
+      );
+    });
   };
 
   return (
     // Навігація
     <React.Fragment>
       {/* для десктопа */}
-      <ul className="nav">
-        {/* <li className="nav__item">
-          <SwitcherExample />
-        </li> */}
-
-        <li className="nav__item">
-          <Link href="/[lang]" as={`/${locale}`}>
-            <a>{t("headerMenu_titleHomeIcon")}</a>
-          </Link>
-        </li>
-
-        <li className="nav__item">
-          <Link href="/[lang]/promotions" as={`/${locale}/promotions`}>
-            <a>{t("headerMenu_titlePromotions")}</a>
-          </Link>
-        </li>
-        <li className="nav__item">
-          <Link href="/[lang]/shops" as={`/${locale}/shops`}>
-            <a>{t("headerMenu_titleShops")}</a>
-          </Link>
-        </li>
-        <li className="nav__item">
-          <Link href="/[lang]/about" as={`/${locale}/about`}>
-            <a>{t("headerMenu_titleAboutME")}</a>
-          </Link>
-        </li>
-        {/* іконка теми */}
+      <ul className="nav">{renderMenu()}</ul>
+      {/* Мобільна навігація*/}
+      <div className="icon">
+        {/* іконка мобільного меню/faList/ */}
         <i
-          className="nav__item"
-          title={t("headerMenu_titleTheme")}
-          onClick={themeMenuToggle}
-        >
-          {!themeTypeLight ? (
-            <FontAwesomeIcon icon={faSun} />
-          ) : (
-            <FontAwesomeIcon icon={faMoon} />
-          )}
-        </i>
-        {/* іконка мови */}
-        <i className="nav__item" title={t("headerMenu_titleLanguage")}>
-          <FontAwesomeIcon icon={faGlobe} onClick={langMenuToggle} />
-        </i>
-      </ul>
-      {/* Мобіцльна навігація*/}
-      <div className="menu-icon">
-        {/* іконк мобільного меню/гамбургер/ */}
-        <i
-          className="icon"
           onClick={() => mobileMenuToggle(mobileMenuOpen ? false : true)}
-          title={t("headerMenu_titleNavMenu")}
+          title={t("headerMenu_iconTitleNavMenu")}
         >
-          {/* <FontAwesomeIcon icon={faBars} /> */}
           <FontAwesomeIcon icon={faList} />
-        </i>
-        {/* іконка теми */}
-        <i
-          className="icon"
-          title={t("headerMenu_titleTheme")}
-          onClick={themeMenuToggle}
-        >
-          {!themeTypeLight ? (
-            <FontAwesomeIcon icon={faSun} />
-          ) : (
-            <FontAwesomeIcon icon={faMoon} />
-          )}
-        </i>
-        {/* іконка мови */}
-        <i className="icon">
-          <FontAwesomeIcon
-            icon={faGlobe}
-            title={t("headerMenu_titleLanguage")}
-            onClick={langMenuToggle}
-          />
         </i>
       </div>
       {/* Список мобильної навігації */}
-      <MobileNav
+      <HeaderMenuMobile
         mobileMenuOpen={mobileMenuOpen}
         mobileMenuToggle={mobileMenuToggle}
+        renderMenu={renderMenu}
       />
-      {/* випадаючі списки теми і мовиselect */}
-      {/* {themeMenuOpen ? <ThemeSwitcher themeMenuToggle={themeMenuToggle} /> : ""} */}
-      {langMenuOpen ? <LocaleSwitcher langMenuToggle={langMenuToggle} /> : ""}
 
       <style jsx>{`
-        /* ------------ Desktop navigation ----------- */
         .nav {
-          list-style-type: none; /**Отменяет маркеры для списка. */
-          margin: 0;
-          padding: 0;
+          //margin: 0;
+          //padding: 0;
           display: flex;
           justify-content: flex-end; /* Вирівнювання елементів по головній осі(x) вправо */
-          align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
+          align-items: center; /* Вирівнювання елементів по перетину осі(y) центр*/
         }
-        /* Условие для экранов с шириной от 0 до 1200px */
-        @media (max-width: 1200px) {
-          .nav {
-            display: none; /*Временно удаляет элемент из документа */
-          }
-        }
-
-        .nav__item {
-          margin-right: 20px;
-          //margin: 10px;
-          padding: 0px;
-        }
-
-        .nav__item:last-child {
-          margin-right: 5px;
-        }
-
-        .nav__link {
-          font-size: 22px;
-          font-weight: 600;
-          color: #fff;
-          text-decoration: none;
-        }
-        .nav__link:hover {
-          color: #ffd600;
-        }
-
-        /* --------------- Mobile navigation button ----------- */
-
-        .menu-icon {
+        /* --- Mobile navigation icon -- */
+        .icon {
           display: none;
           //z-index: 19;
         }
-
-        /* Для екранів з шириною  0 до 1200px */
-
-        @media (max-width: 1200px) {
-          .menu-icon {
-            display: flex;
-            justify-content: flex-end; /* Вирівнювання елементів по головній осі(x) вправо */
-            align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
-          }
-          .icon {
-            /* height: 20px; */
-            align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
-            margin: 5px;
-            padding: 0px;
-          }
+        .icon :hover {
+          color: ${theme.colors.textHeadHover};
+          background: ${theme.colors.textBackgroundHeadHover};
         }
-        .nav a,
-        i {
-          color: ${theme.colors.textHead};
-          background: ${theme.colors.backgroundHead};
-          font-family: ${theme.fontFamily.serif};
-          font-size: 18px; //Рукавичка
-          font-weight: 200;
+        /* Для екранів з шириною  0 до 1200px */
+        //@media (max-width: 1200px) {
+        @media (max-width: 960px) {
+          /*iPad<960px*/
+          .nav {
+            display: none; /*не показує */
+          }
+
+          .icon {
+            //margin-left: 10px; //Відступ від кожного елемента зліва
+            display: flex;
+            align-items: center; /* Вирівнювання елементів по перетину осі(y) центр */
+            justify-content: center; /* Вирівнювання елементів по головній осі(x) вправо */
+            color: ${theme.colors.textHead};
+            background: ${theme.colors.backgroundHead};
+            border-radius: 45px; /* Радіус*/
+            width: 45px;
+            height: 45px;
+          }
         }
       `}</style>
     </React.Fragment>

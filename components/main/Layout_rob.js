@@ -2,7 +2,6 @@
 
 import { useContext } from "react";
 import Head from "next/head";
-
 import Header from "./Header";
 import Footer from "./Footer";
 import { ComponentContext } from "../../context/ComponentContext";
@@ -28,47 +27,10 @@ const Layout = ({ children, title, description }) => {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> */}
       </Head>
       <Header />
-
       <div className="content-wrapper">{children}</div>
       <Footer />
-      <style jsx global>{`
-        //Глобальні стилі для елементів headerMenu
-        .g-nav__item {
-          margin: 0px;
-          padding: 5px 10px;//Щоб зробити заокруглення
-          //background: ${theme.colors.backgroundHead};
-          font-family: ${theme.fontFamily.serif};
-          font-size: 18px; //Рукавичка
-          font-weight: 100; //грубина
-          list-style-type: none; /**Отменяет маркеры для списка. */
-        }
 
-        .g-nav__item:hover {
-          background: ${theme.colors.textBackgroundHeadHover};
-        }
-
-        .g-nav__item-a {
-          color: ${theme.colors.textHead};
-        }
-        .g-nav__item-a:hover {
-          color: ${theme.colors.textHeadHover};
-        }
-        .g-nav__item__active {
-          margin: 0;
-          padding: 5px 10px;
-          display: block;
-          //text-decoration: none;
-          font-family: ${theme.fontFamily.serif};
-          font-size: 18px; //Рукавичка
-          font-weight: 100; //грубина
-          color: ${theme.colors.textHead};
-          //
-          background: red;
-          color: white;
-        }
-      `}</style>
       <style jsx global>{`
-        //global Next.js
         *,
         *::before,
         *::after {
@@ -82,15 +44,12 @@ const Layout = ({ children, title, description }) => {
           text-rendering: optimizeLegibility;
         }
         a {
-          /*color: #fff;*/
-          color: #e47328;
-          margin-right: 10px;
+          color: #1b789e;
           text-decoration: none;
         }
 
         a:hover {
-          /*color: #166281;*/
-          color: #d3a40b;
+          color: #166281;
         }
 
         h1,
@@ -114,22 +73,27 @@ const Layout = ({ children, title, description }) => {
         img {
           max-width: 100%;
         }
+
+        /* Layout */
+
+        .content-wrapper {
+          margin-top: 60px; /*Щоб контент не заїжджав під шапку*/
+          min-height: 600px;
+          text-align: center;
+          margin: 0px "auto";
+          padding: 0px 10px;
+        }
+        @media (max-width: 600px) {
+          content-wrapper {
+            max-width: 599px;
+          }
+        }
       `}</style>
       <style jsx global>{`
-        //Для динамічних стилів окремо
         body {
           background: ${theme.colors.background};
           color: ${theme.colors.text};
           font-family: ${theme.fontFamily.sansSerif};
-        }
-      `}</style>
-      <style jsx>{`
-        /* Layout */
-        .content-wrapper {
-          margin-top: 50px; /*Щоб контент не заїжджав під шапку*/
-          min-height: 600px;
-          text-align: center;
-          padding: 0px;
         }
       `}</style>
     </div>

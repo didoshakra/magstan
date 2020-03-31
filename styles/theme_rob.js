@@ -1,11 +1,11 @@
 //*** */
-export const themes = ["light", "dark", "other"];
+// export const themes = ["light", "dark", "other"];
 
-export const themesNames = {
-  light: "Світла",
-  dark: "Темна",
-  other: "Інша"
-};
+// export const themesNames = {
+//   light: "Світла",
+//   dark: "Темна",
+//   other: "Інша"
+// };
 
 //Для тем будемо міняти тільки кольори(theme.colors.)
 export const themeDark = {
@@ -24,10 +24,9 @@ export const themeDark = {
     // success: "#d4edda",
     //
     // text: "#333",
+    //imgHome: "/photo/bananu-alkogol-neobr-opt.jpg",
     text: "#fff", //білий
     textHead: "#fff", //білий// background1: "#000", //чорний
-    textHeadHover: "rgba(52,144,246,1)",
-    textBackgroundHeadHover: "rgba(62,107,156,1)",
     // background: "#3f3f3f", //чорний grey[100] grey[900]
     // backgroundHead: "rgba(63,63,31,1)",
     // backgroundHeadMenu: "rgba(63,63,31,0.9)",
@@ -62,12 +61,10 @@ export const themeLith = {
     //   border: "#ddd",
     //   warning: "#fff3cd",
     //   success: "#d4edda",
+    //imgHome: "/photo/produkty_small_opt.jpg",
     text: "#060214",
     //textHead: "#333", //чорний
     textHead: "#fff", //білий
-    textHeadHover: "#e47328",
-    //textBackgroundHeadHover: "#0d8ecf",
-    textBackgroundHeadHover: "rgba(20,92,173,1)",
     backgroundHead: "rgba(21,103,179,1)",
     backgroundHeadMenu: "rgba(21,103,179,0.9)",
     //background: "rgba(220,234,244,1)",
@@ -82,25 +79,6 @@ export const themeLith = {
   }
 };
 export const themeOther = {
-  fontFamily: {
-    sansSerif:
-      '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI","Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
-    mono: "Menlo, Monaco, monospace"
-    //   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
-    //     "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
-    //   text-rendering: optimizeLegibility;
-  },
-  colors: {
-    text: "#333",
-    // text: "#121212",
-    link: "#1eaaf1",
-    linkHover: "#0d8ecf",
-    border: "#ddd",
-    warning: "#fff3cd",
-    success: "#d4edda",
-    background: "#f8f",
-    background1: "#f88",
-    // background1: "#333",
-    color: "#354545"
-  }
+  fontFamily: {},
+  colors: {}
 };
